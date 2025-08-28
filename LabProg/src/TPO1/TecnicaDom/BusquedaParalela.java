@@ -13,7 +13,7 @@ import TPO1.utiles.Resultado;
 
 /**
  *
- * @author santt
+ * @author G16
  */
 public class BusquedaParalela extends RecursiveTask<Boolean> {
 
