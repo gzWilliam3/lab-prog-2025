@@ -8,7 +8,7 @@ import TPO1.TecnicaDom_EDT.ArbolAVL;
 
 /**
  *
- * @author santt
+ * @author G16
  */
 public class TestRecursiveTask {
 
