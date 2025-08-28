@@ -15,7 +15,7 @@ import TPO1.TecnicaDom.BusquedaParalela;
 
 /**
  *
- * @author santt
+ * @author G16
  */
 public class ArbolAVL {
 
