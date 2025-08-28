@@ -14,13 +14,13 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author santt
+ * @author g16
  */
 public class Log {
 
     public static void escribir(String entrada) {
 
-        try (BufferedWriter output = new BufferedWriter(new FileWriter("C:\\Users\\gnzlz\\OneDrive\\Documentos\\NetBeansProjects\\LabProg\\src\\TPO1\\Dom2\\log.txt", true))) {
+        try (BufferedWriter output = new BufferedWriter(new FileWriter("src/TPO1/log.txt", true))) {
             output.write(entrada);
             output.newLine();
 
@@ -32,7 +32,7 @@ public class Log {
 
     public static void leer(ArbolAVL alumnos) {
 
-        try (BufferedReader input = new BufferedReader(new FileReader("C:\\Users\\gnzlz\\OneDrive\\Documentos\\NetBeansProjects\\LabProg\\src\\TPO1\\Dom2\\data.txt"))) {
+        try (BufferedReader input = new BufferedReader(new FileReader("src/TPO1/data.txt"))) {
 
             String str;
             while ((str = input.readLine()) != null) {
