@@ -20,37 +20,24 @@ public class BusquedaParalela extends RecursiveTask<Boolean> {
     private final NodoAVL nodo;
     private final Comparable elemento;
     private final int threshold;
-    private final Resultado encontrado;
-    private final Lock cerrojo;
-    //private final AtomicBoolean encontrado;
+    private final AtomicBoolean encontrado;
 
-    //public BusquedaParalela(NodoAVL nodo, Comparable elemento, int threshold, AtomicBoolean encontrado) {
-    public BusquedaParalela(NodoAVL nodo, Comparable elemento, int threshold, Resultado encontrado, Lock cerrojo) {
+    public BusquedaParalela(NodoAVL nodo, Comparable elemento, int threshold, AtomicBoolean encontrado) {
         this.nodo = nodo;
         this.elemento = elemento;
         this.threshold = threshold;
         this.encontrado = encontrado;
-        this.cerrojo = cerrojo;
     }
 
-    //private boolean busquedaSecuencial(NodoAVL nodo, Comparable elemento, AtomicBoolean encontrado) {
-    private boolean busquedaSecuencial(NodoAVL nodo, Comparable elemento, Resultado encontrado) {
+    private boolean busquedaSecuencial(NodoAVL nodo, Comparable elemento, AtomicBoolean encontrado) {
         boolean resultado = false;
         if (nodo != null && !encontrado.get()) {
             if (nodo.getElemento().equals(elemento)) {
+                // Encontramos al elemento
                 System.out.println("Elemento encontrado por el hilo: " + Thread.currentThread().getName());
+                System.out.println("El alumno es: " + nodo.getElemento().toString());
                 encontrado.set(true);
                 resultado = true;
-                System.out.println("El alumno es: " + nodo.getElemento().toString());
-                cerrojo.lock();
-                try {
-                    System.out.println("Elemento encontrado por el hilo: " + Thread.currentThread().getName());
-                    encontrado.set(true);
-                    resultado = true;
-                    System.out.println("El alumno es: " + nodo.getElemento().toString());
-                } finally {
-                    cerrojo.unlock();
-                }
             } else if (!encontrado.get()) {
                 // Buscamos primero por el hijo izquierdo
                 resultado = busquedaSecuencial(nodo.getIzquierdo(), elemento, encontrado);
@@ -73,14 +60,15 @@ public class BusquedaParalela extends RecursiveTask<Boolean> {
             if (nodo.getAltura() <= threshold) {
                 // Si la altura es menor o igual al threshold se realiza una busqueda secuencial
                 System.out.println("Cambiando a busqueda secuencial en el hilo: " + Thread.currentThread().getName());
-                resultado = busquedaSecuencial(nodo, elemento, encontrado);
+                busquedaSecuencial(nodo, elemento, encontrado);
+                resultado = encontrado.get();
             } else {
                 // Si la altura supera el threshold, dividir en subtareas
                 boolean resultadoIzq;
                 boolean resultadoDer;
 
-                BusquedaParalela tareaIzq = new BusquedaParalela(nodo.getIzquierdo(), elemento, threshold, encontrado, cerrojo);
-                BusquedaParalela tareaDer = new BusquedaParalela(nodo.getDerecho(), elemento, threshold, encontrado, cerrojo);
+                BusquedaParalela tareaIzq = new BusquedaParalela(nodo.getIzquierdo(), elemento, threshold, encontrado);
+                BusquedaParalela tareaDer = new BusquedaParalela(nodo.getDerecho(), elemento, threshold, encontrado);
 
                 // 1. Lanza la tarea derecha para que otro hilo la procese en paralelo.
                 tareaDer.fork();
