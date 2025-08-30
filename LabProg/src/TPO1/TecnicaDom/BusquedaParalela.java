@@ -5,11 +5,9 @@
 package TPO1.TecnicaDom;
 
 import TPO1.TecnicaDom_EDT.NodoAVL;
-import java.util.concurrent.RecursiveTask;
-//import java.util.concurrent.atomic.AtomicBoolean;
 
-import java.util.concurrent.locks.Lock;
-import TPO1.utiles.Resultado;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 
 /**
  *
