@@ -636,12 +636,9 @@ public class ArbolAVL {
                 forkJoinPool = new ForkJoinPool();
             }
 
-            Resultado encontrado = new Resultado(false);
-            Lock cerrojo = new ReentrantLock(); 
-            //AtomicBoolean encontrado = new AtomicBoolean(false);
+            AtomicBoolean encontrado = new AtomicBoolean(false);
 
-            BusquedaParalela task = new BusquedaParalela(raiz, elemento, threshold, encontrado, cerrojo);
-            //BusquedaParalela task = new BusquedaParalela(raiz, elemento, threshold, encontrado);
+            BusquedaParalela task = new BusquedaParalela(raiz, elemento, threshold, encontrado);
             exito = forkJoinPool.invoke(task);
         }
 
