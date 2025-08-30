@@ -5,9 +5,7 @@
 package TPO1.TecnicaDom_EDT;
 
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-//import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import TPO1.utiles.Resultado;
 import TPO1.TecnicaDom.BusquedaParalela;
