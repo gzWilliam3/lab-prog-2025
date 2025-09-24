@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* SECCION DEL NAV */
+.navContenedor li {
+	list-style-type: none;
+	display: inline;
+	border: 1px solid black; // Borrar despues
+}
+
+.navContenedor li a{
+	color: black;
+  	font-size: 16px;
+  	text-decoration: none;
+  	padding: 5px 15px;
+}
+/* FIN DEL SECCION DEL NAV */
