@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* SECCION DEL NAV */
+.navContenedor li {
+	list-style-type: none;
+	display: inline;
+	border: 1px solid black; // Borrar despues
+}
+
+.navContenedor li a{
+	color: black;
+  	font-size: 16px;
+  	text-decoration: none;
+  	padding: 5px 15px;
+}
+/* FIN DEL SECCION DEL NAV */
+
+
+/* SECCION IMAGEN FONDO Y LOGO */
+.fondoMain{
+	width: 1000px;
+	height: auto;
+	background-image: url("../assets/fondo.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo{
+	width: 512px;
+	height: 512px;
+	background-image: url("../assets/buenMorfar512.png");
+	background-size: contain;
+	background-position: center;
+}
+/* FIN SECCION IMAGEN FONDO Y LOGO */
+
+#seccionNosotros{
+	padding: 20px;
+	border: 1px solid black; // Borrar despues
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.containerNosotros, .imgNosotros{
+	flex: 1;
+	min-width: 200px;
+	border: 1px solid black; // Borrar despues
+}
+
+.containerNosotros{
+	padding: 50px;
+} 
+
+.nosTitulo{
+	text-align: center;
+}
+
+.imgNosotros{
+	background-color: #D3D3D3;
+	background-image: url("../assets/imgNos.jpg");
+}
+
+.piePagina{
+	background-color: rgb(26, 25, 25);
+	height: 100px;
+}
