@@ -2,19 +2,70 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f6f7f9;
 }
 
 /* SECCION DEL NAV */
-.navContenedor li {
-	list-style-type: none;
-	display: inline;
-	border: 1px solid black; // Borrar despues
+.navContenedor ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
 }
 
 .navContenedor li a{
+	display: block;
 	color: black;
   	font-size: 16px;
   	text-decoration: none;
-  	padding: 5px 15px;
+  	padding: 10px 15px;
 }
 /* FIN DEL SECCION DEL NAV */
+
+/* INICIO SECCION GRILLA */
+.listaProductos{
+	display: grid;
+	padding: 50px;
+	gap: 30px;
+}
+
+.listaSubproductos{
+	border: 1px solid black; /*Borrar despues */
+	border-radius: 5px;
+	padding:20px;
+}
+
+.grillaSubproductos{
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.producto{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	border: 1px solid black; /*Borrar despues */
+	border-radius: 30px;
+	height: 200px;
+	background-color: #ffffff;
+}
+
+.textoProducto{
+	padding-left: 15px;
+}
+
+.nombreProducto{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.descripcionProducto{
+	font-size: 15px;
+}
+
+.fotoProducto{
+	
+}
