@@ -9,3 +9,11 @@ Este trabajo, desarrollado por el Grupo 16, explora dos áreas:
 El objetivo es comprender y demostrar la aplicación práctica de ambos conceptos aplicandolos en dominios propios.
 
 [Link Informe TPO1](https://docs.google.com/document/d/15ouBH6mqtyFgFOFW3gO527LFg4N5KLxveZAXXVW6Uac/edit?usp=sharing)
+
+## Proyecto Web: Restaurante "Buen Morfar"
+Se desarrolla el dominio correspondiente a un restaurante especializado en cocina gourmet, "Buen Morfar". Su propuesta se centra en brindar una experiencia culinaria única, dirigida tanto a comensales exigentes como a locales y hostels de categoría.
+
+El trabajo se desarrolla a lo largo de 3 entregas:
+- Web Estatica
+- Web Dinamica
+- Mobile
