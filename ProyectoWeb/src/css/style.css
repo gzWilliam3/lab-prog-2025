@@ -73,10 +73,14 @@ header{
 
 .containerNosotros{
 	padding: 50px;
+	text-align: justify;
+  	text-indent: 20px;
 } 
 
 .nosTitulo{
 	text-align: center;
+	text-transform: uppercase;
+  	color: red;
 }
 
 .imgNosotros{
