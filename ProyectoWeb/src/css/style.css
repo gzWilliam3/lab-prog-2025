@@ -14,7 +14,7 @@ header{
 }
 
 /* SECCION DEL NAV */
-.navContenedor ul {
+.listado {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,7 +24,7 @@ header{
 	background-color: #ffffff;
 }
 
-.navContenedor li a{
+.listado a{
 	display: block;
 	color: black;
   	font-size: 16px;
