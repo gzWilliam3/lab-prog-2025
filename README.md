@@ -19,6 +19,6 @@ El trabajo se desarrolla a lo largo de 3 entregas:
 - Mobile
 
 ## Integrantes del Grupo 16
-* [Gonzalez, William Agustin](github.com/gzWilliam3)
+* [Gonzalez, William Agustin](https://github.com/gzWilliam3)
 * [Gonzalez, Tomas Santiago](https://github.com/tsantiagogonzalez)
 * [Nuñez Ardanaz, Francisco](https://github.com/francisconunez-PG)
