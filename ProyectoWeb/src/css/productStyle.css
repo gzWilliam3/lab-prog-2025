@@ -5,133 +5,132 @@ body {
   background-color: #e1e3e8;
 }
 
-header{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #ffffff;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
 }
 
-a:hover{
-	border-bottom: 2px solid black;
-	background-color: lightgray;
+a:hover {
+  border-bottom: 2px solid black;
+  background-color: lightgray;
 }
 
 /* SECCION DEL NAV */
 .listado {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	background-color: #ffffff;
-	box-shadow: 1px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 1px 1px;
 }
 
-.listado a{
-	display: block;
-	color: black;
-  	font-size: 16px;
-  	text-decoration: none;
-  	padding: 10px 15px;
+.listado a {
+  display: block;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
 }
 
-main .listado{
-	padding: 30px;
+main .listado {
+  padding: 30px;
 }
+
 /* FIN DEL SECCION DEL NAV */
 
 /* INICIO SECCION FONDO */
-.fondoPagina{
-	width: 1fr;
-	height: 512px;
-	background-image: url("../assets/imagenFondoProductos.jpg");
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.fondoPagina {
+  width: 1fr;
+  height: 512px;
+  background-image: url("../assets/imagenFondoProductos.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* FIN SECCION FONDO */
 
 /* INICIO NAV DE COMIDAS */
-.navContenedorComidas{
-	position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffffff;
+.navContenedorComidas {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
 }
-
 
 /* FIN NAV DE COMIDAS */
 
 /* INICIO SECCION GRILLA */
-.listaProductos{
-	display: grid;
-	padding: 50px;
-	gap: 30px;
+.listaProductos {
+  display: grid;
+  padding: 50px;
+  gap: 30px;
 }
 
-.listaSubproductos{
-	/* border: 1px solid black; /*Borrar despues */
-	/* border-radius: 30px; */
-	padding:20px;
+.listaSubproductos {
+  /* border: 1px solid black; /*Borrar despues */
+  /* border-radius: 30px; */
+  padding: 20px;
 }
 
-.grillaSubproductos{
-	display: grid;
-	gap: 30px;
-	grid-template-columns: repeat(2, 1fr);
+.grillaSubproductos {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.producto:hover{
-	border: 1px solid black;
-	transform: scale(1.05);
-  	background-color: #eee;
+.producto:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+  background-color: #eee;
 }
 
-.producto{
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	/* border: 1px solid black; Borrar despues */
-	gap:30px;
-	border-radius: 30px;
-	height: 200px;
-	background-color: #ffffff;
-	padding: 10px;
-	transition: transform 0.3s;
+.producto {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* border: 1px solid black; Borrar despues */
+  gap: 30px;
+  border-radius: 30px;
+  height: 200px;
+  background-color: #ffffff;
+  padding: 10px;
+  transition: transform 0.3s;
 }
 
-.textoProducto{
-	padding-left: 15px;
+.textoProducto {
+  padding-left: 15px;
 }
 
-.nombreProducto{
-	font-size: 20px;
-	font-weight: bold;
+.nombreProducto {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.descripcionProducto{
-	font-size: 15px;
+.descripcionProducto {
+  font-size: 15px;
 }
 
-.contenedorFotoProducto{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.contenedorFotoProducto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fotoProducto{
-    max-width: 150px;   
-    max-height: 150px;  
-    width: auto;       
-    height: auto;      
-    object-fit: fill; 
-    display: block;    
+.fotoProducto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-radius: 30px;
 }
 
-.piePagina{
-	background-color: rgb(26, 25, 25);
-	height: 100px;
+.piePagina {
+  background-color: rgb(26, 25, 25);
+  height: 100px;
 }

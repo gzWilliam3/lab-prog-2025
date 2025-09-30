@@ -1,317 +1,360 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/productStyle.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/productStyle.css" />
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-	<title>Productos</title>
-</head>
+    <title>Productos</title>
+  </head>
 
-<body>
+  <body>
+    <header class="encabezado">
+      <img src="assets/buenMorfar256.png" />
+    </header>
 
+    <!-- Barra Nav -->
+    <nav class="navContenedor">
+      <ul class="listado">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#seccionNosotros">Nosotros</a></li>
+        <li><a href="productos.html">Productos</a></li>
+      </ul>
+    </nav>
+    <!-- Fin Barra Nav -->
 
-	<header class="encabezado"> 
-		<img src="assets/buenMorfar256.png">
-	</header> 
-	
-<!-- Barra Nav -->
-	<nav class="navContenedor">
-		<ul class = "listado">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="index.html#seccionNosotros">Nosotros</a></li>
-			<li><a href="productos.html">Productos</a></li>
-		</ul>
-	</nav>
-<!-- Fin Barra Nav -->
+    <!-- Inicio MAIN-->
+    <main>
+      <!-- Inicio fondo-->
+      <section class="fondoPagina"></section>
 
-<!-- Inicio MAIN-->
-	<main>
+      <!-- Fin fondo -->
 
-	<!-- Inicio fondo-->
-		<section class="fondoPagina">
-		</section>
-		
-	<!-- Fin fondo -->
+      <!-- Inicio navegacion de comidas-->
+      <nav class="navContenedorComidas">
+        <ul class="listado">
+          <li><a href="#linkPasta">Pasta</a></li>
+          <li><a href="#linkEspecialidad">Especialidad</a></li>
+          <li><a href="#linkSandwich">Sandwich</a></li>
+          <li><a href="#linkNuggets">Nuggets</a></li>
+          <li><a href="#linkEnsalada">Ensalada</a></li>
+        </ul>
+      </nav>
+      <!-- Fin navegacion comidas-->
 
-	<!-- Inicio navegacion de comidas-->
-	 	<nav class="navContenedorComidas">
-			<ul class="listado">
-				<li><a href="#linkPasta">Pasta</a></li>
-				<li><a href="#linkEspecialidad">Especialidad</a></li>
-				<li><a href="#linkSandwich">Sandwich</a></li>
-				<li><a href="#linkNuggets">Nuggets</a></li>
-				<li><a href="#linkEnsalada">Ensalada</a></li>
-			</ul>
-		</nav>
-	<!-- Fin navegacion comidas-->
+      <!-- Inicio seccion contenedor productos-->
+      <section class="contenedorProductos">
+        <!-- Inicio seccion lista productos-->
+        <section class="listaProductos">
+          <!-- Inicio subproductos PASTA-->
+          <section class="listaSubproductos">
+            <h2 id="linkPasta">Pasta</h2>
 
-	<!-- Inicio seccion contenedor productos-->
-		<section class = "contenedorProductos"> 
+            <section class="grillaSubproductos">
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Pasta con Queso</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-			<!-- Inicio seccion lista productos-->
-			<section class="listaProductos">
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/pasta/pastaQueso.jpeg"
+                  />
+                </div>
+              </div>
 
-				<!-- Inicio subproductos PASTA-->
-				<section class="listaSubproductos">
-					<h2 id="linkPasta">Pasta</h2>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Pasta y Verduras</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-					<section class="grillaSubproductos">
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Pasta con Queso</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/pasta/pasta&verduras.jpg"
+                  />
+                </div>
+              </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/pasta/pastaQueso.jpeg">
-							</div>	
-						</div>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Pasta con Albondigas</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Pasta y Verduras</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/pasta/pastaAlbondigas.jpeg"
+                  />
+                </div>
+              </div>
+            </section>
+          </section>
+          <!-- Fin subproductos PASTA-->
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/pasta/pasta&verduras.jpg">
-							</div>	
-						</div>
+          <!-- Inicio subproductos ESPECIALIDAD-->
+          <section class="listaSubproductos">
+            <h2 id="linkEspecialidad">Especialidad</h2>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Pasta con Albondigas</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+            <section class="grillaSubproductos">
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Hamburguesa "Buen Morfar"</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/pasta/pastaAlbondigas.jpeg">
-							</div>	
-						</div>
-					</section>
-				</section>
-				<!-- Fin subproductos PASTA-->
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/especialidad/hamburguesa.jpg"
+                  />
+                </div>
+              </div>
 
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Pollo a la morfar + papas</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-				<!-- Inicio subproductos ESPECIALIDAD-->
-				<section class="listaSubproductos">
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/especialidad/polloPapas.jpg"
+                  />
+                </div>
+              </div>
+            </section>
+          </section>
+          <!-- Fin subproductos ESPECIALIDAD-->
 
-					<h2 id="linkEspecialidad">Especialidad</h2>
+          <!-- Inicio subproductos SANDWICH-->
+          <section class="listaSubproductos">
+            <h2 id="linkSandwich">Sandwich</h2>
 
-					<section class="grillaSubproductos">
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Hamburguesa "Buen Morfar"</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+            <section class="grillaSubproductos">
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Sandwich de Carne BBQ</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/especialidad/hamburguesa.jpg">
-							</div>	
-						</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/sandwich/sandwichCarneBarbacoa.jpg"
+                  />
+                </div>
+              </div>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Pollo a la morfar + papas</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Sandwich de Pollo</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/especialidad/polloPapas.jpg">
-							</div>	
-						</div>
-					</section>
-				</section>
-				<!-- Fin subproductos ESPECIALIDAD-->
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/sandwich/sandwichPollo.jpg"
+                  />
+                </div>
+              </div>
 
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Sandwich de Pollo y Papas</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-				<!-- Inicio subproductos SANDWICH-->
-				<section class="listaSubproductos">
-					<h2 id="linkSandwich">Sandwich</h2>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/sandwich/sandwichPolloPapas.jpg"
+                  />
+                </div>
+              </div>
 
-					<section class="grillaSubproductos">
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Sandwich de Carne BBQ</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Sandwich de Pollo y Queso</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maio.
+                  </p>
+                </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/sandwich/sandwichCarneBarbacoa.jpg">
-							</div>	
-						</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/sandwich/sandwichPolloQueso.jpeg"
+                  />
+                </div>
+              </div>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Sandwich de Pollo</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Sandwich de Soja BBQ</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/sandwich/sandwichPollo.jpg">
-							</div>	
-						</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/sandwich/sandwichSojaBarbacoa.jpeg"
+                  />
+                </div>
+              </div>
+            </section>
+          </section>
+          <!-- fin subproductos SANDWICH-->
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Sandwich de Pollo y Papas</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+          <!-- inicio seccion subproductos NUGGETS-->
+          <section class="listaSubproductos">
+            <h2 id="linkNuggets">Nuggets</h2>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/sandwich/sandwichPolloPapas.jpg">
-							</div>	
-						</div>
+            <section class="grillaSubproductos">
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Nuggets de Pollo</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Sandwich de Pollo y Queso</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maio.
-								</p>
-							</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/nuggets/nuggetsPollo.jpeg"
+                  />
+                </div>
+              </div>
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/sandwich/sandwichPolloQueso.jpeg">
-							</div>	
-						</div>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Nuggets de Verdura</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Sandwich de Soja BBQ</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/nuggets/nuggetsVerdura.jpeg"
+                  />
+                </div>
+              </div>
+            </section>
+          </section>
+          <!-- fin seccion subproductos NUGGETS-->
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/sandwich/sandwichSojaBarbacoa.jpeg">
-							</div>	
-						</div>
-					</section>
-					
-				</section>
-				<!-- fin subproductos SANDWICH-->
+          <!-- Inicio seccion subproductos ENSALADAS-->
+          <section class="listaSubproductos">
+            <h2 id="linkEnsalada">Ensalada</h2>
 
+            <!-- inicio grilla ensaladas -->
+            <section class="grillaSubproductos">
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Ensalada Champi+Verde</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-				<!-- inicio seccion subproductos NUGGETS-->
-				<section class="listaSubproductos">
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/ensaladas/ensalada1.jpeg"
+                  />
+                </div>
+              </div>
 
-					<h2 id="linkNuggets">Nuggets</h2>
+              <div class="producto">
+                <div class="textoProducto">
+                  <p class="nombreProducto">Ensalada Verde</p>
+                  <p class="descripcionProducto">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odio enim voluptas tempore nihil quisquam unde veritatis
+                    consectetur dicta maiores.
+                  </p>
+                </div>
 
-					<section class="grillaSubproductos">
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Nuggets de Pollo</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
+                <div class="contenedorFotoProducto">
+                  <img
+                    class="fotoProducto"
+                    src="assets/comida/ensaladas/ensalada2.jpeg"
+                  />
+                </div>
+              </div>
+            </section>
+            <!-- fin seccion grilla de ensaladas-->
+          </section>
+          <!-- Fin seccion lista subproductos ENSALADA -->
+        </section>
+        <!-- Fin seccion lista productos -->
+      </section>
+      <!-- Fin seccion contenedor productos-->
+    </main>
+    <!-- Fin MAIN-->
 
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/nuggets/nuggetsPollo.jpeg">
-							</div>	
-						</div>
-
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Nuggets de Verdura</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
-
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/nuggets/nuggetsVerdura.jpeg">
-							</div>	
-						</div>
-					</section>
-				</section>
-				<!-- fin seccion subproductos NUGGETS-->
-
-				<!-- Inicio seccion subproductos ENSALADAS-->
-				<section class="listaSubproductos">
-					<h2 id="linkEnsalada">Ensalada</h2>
-
-					<!-- inicio grilla ensaladas -->
-					<section class="grillaSubproductos">
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Ensalada Champi+Verde</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
-
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/ensaladas/ensalada1.jpeg">
-							</div>	
-						</div>
-
-						<div class="producto">
-							<div class="textoProducto">
-								<p class="nombreProducto">Ensalada Verde</p>
-								<p class="descripcionProducto">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio enim voluptas 
-									tempore nihil quisquam unde veritatis consectetur dicta maiores.
-								</p>
-							</div>
-
-							<div class="contenedorFotoProducto">
-								<img class="fotoProducto" src="assets/comida/ensaladas/ensalada2.jpeg">
-							</div>	
-						</div>
-					</section>
-					<!-- fin seccion grilla de ensaladas-->
-				</section>
-				<!-- Fin seccion lista subproductos ENSALADA -->
-			</section>
-			<!-- Fin seccion lista productos -->
-		</section> 
-		<!-- Fin seccion contenedor productos-->
-	
-	</main>
-	<!-- Fin MAIN-->
-
-	<!-- Footer -->
-	<footer class="piePagina">
-		
-	</footer>
-<!-- Fin de footer -->
-</body>
-
+    <!-- Footer -->
+    <footer class="piePagina"></footer>
+    <!-- Fin de footer -->
+  </body>
 </html>
