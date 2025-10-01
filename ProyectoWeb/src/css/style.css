@@ -43,6 +43,49 @@ header {
   justify-content: center;
   align-items: center;
 }
+.barraNav:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+  background-color: #757575;
+}
+
+.barraNav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* border: 1px solid black; Borrar despues */
+  gap: 30px;
+  border-radius: 30px;
+  height: 200px;
+  background-color: #ffffff;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+.navContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent; 
+}
+
+.navContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent; 
+}
+
+.listado {
+  background-color: #ffffff; 
+  border-radius: 15px;       /* esquinas redondeadas */
+  padding: 10px 20px;
+  list-style: none;
+  display: flex;
+  gap: 30px;                 /* separa los links */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* da efecto flotante */
+}
+
+
+
 
 /*
 .logo{
