@@ -100,7 +100,7 @@ header {
 .logoFooter {
 	width: 128px;
 	height: 128px;
-	background-color: blue;
+	/*background-color: blue;*/
 }
 
 .logoFooter img{
