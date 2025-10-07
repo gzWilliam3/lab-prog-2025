@@ -114,6 +114,9 @@ main .listado {
 
 .descripcionProducto {
   font-size: 15px;
+  white-space: wrap;
+  text-overflow: ellipsis; /* checkear porque no funciona cuando achico pantalla /*/
+  overflow: hidden;
 }
 
 .contenedorFotoProducto {
