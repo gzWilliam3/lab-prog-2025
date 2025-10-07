@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #f6f7f9;
-  font-family: inter;
+  font-family: "Inter", "Playfair Display";
 }
 
 header {
@@ -20,16 +20,22 @@ header {
   align-items: center;
   list-style: none;
   margin: 0;
-  padding: 0;
   background-color: #ffffff;
+  border-radius: 15px;       /* esquinas redondeadas */
+  padding: 30px 30px;
+  gap: 30px;                 /* separa los links */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* da efecto flotante */
 }
 
 .listado a {
   display: block;
   color: black;
-  font-size: 16px;
+  font-family: "Playfair Dipslay";
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
   padding: 10px 15px;
+
 }
 /* FIN DEL SECCION DEL NAV */
 
@@ -43,63 +49,57 @@ header {
   justify-content: center;
   align-items: center;
 }
-.barraNav:hover {
+
+.navContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent; 
+}
+
+.navContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent; 
+}
+
+
+.navContenedor ul li{
+  min-width: 200px;
+  height: 240px;
+  border-radius: 30px ;
+  border: 1px solid black;
+}
+
+.navContenedor ul li:hover {
   border: 1px solid black;
   transform: scale(1.05);
   background-color: #757575;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.barraNav {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  /* border: 1px solid black; Borrar despues */
-  gap: 30px;
+.imagenNav{
   border-radius: 30px;
-  height: 200px;
-  background-color: #ffffff;
-  padding: 10px;
-  transition: transform 0.3s;
+  height: 80%;
 }
-.navContenedor {
+
+.imagenNav img{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: transparent; 
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
 }
 
-.navContenedor {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: transparent; 
+.navContenedor ul li a{
+  text-align: center;
 }
 
-.listado {
-  background-color: #ffffff; 
-  border-radius: 15px;       /* esquinas redondeadas */
-  padding: 10px 20px;
-  list-style: none;
-  display: flex;
-  gap: 30px;                 /* separa los links */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* da efecto flotante */
-}
-
-
-
-
-/*
-.logo{
-	width: 512px;
-	height: 512px;
-	background-image: url("../assets/buenMorfar512.png");
-	background-size: contain;
-	background-position: center;
-}
-*/
 /* FIN SECCION IMAGEN FONDO Y LOGO */
 
+
+/* INICIO SECCION NOSOTROS */
 #seccionNosotros {
-  padding: 50px 200px;
   /*border: 1px solid black; /* Borrar despues */
   height: 500px;
   display: flex;
@@ -115,22 +115,88 @@ header {
 }
 
 .containerNosotros {
-  padding: 50px;
+  padding: 80px;
   text-align: justify;
   text-indent: 20px;
 }
 
 .nosTitulo {
+  font-family: "Playfair Display";
+  font-size: 50px;
+  font-weight: 100;
   text-align: center;
-  text-transform: uppercase;
-  color: red;
+  color: black;
+}
+
+.containerNosotros p{
+  padding: 0px 50px 0px 50px;
+  font-family: "Playfair Display";
 }
 
 .imgNosotros {
-  background-color: #d3d3d3;
-  background-image: url("../assets/imgNos.jpg");
+  max-height: 500px;
 }
 
+.imgNosotros img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* FIN SECCION NOSOTROS */
+
+.gradienteACaja{
+  height: 200px;
+  background: #F6F7F9;
+  background: linear-gradient(to bottom, rgba(246, 247, 249, 1) 35%, rgba(225, 227, 232, 1) 90%);
+}
+
+/* INICIO SECCION CAJA COMIDAS */
+.cajaComidas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #e1e3e8;
+}
+
+.containerComidas{
+  display: inherit;
+  height: auto;
+  gap:30px;
+  padding: 30px;
+  background-color: #ffffff;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.eltoComida{
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+}
+
+.eltoComida img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.eltoComida img:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+/* FIN SECCION CAJA DE COMIDAS */
+
+.gradienteFooter{
+  height:300px;
+  background: #E1E3E8;
+  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
+}
+
+/* INICIO FOOTER */
 .piePagina {
   background-color: #212830;
   height: auto;
@@ -158,3 +224,5 @@ header {
 	height: 128px;
 	background-color: blue;
 }
+
+/* FIN FOOTER */ 
