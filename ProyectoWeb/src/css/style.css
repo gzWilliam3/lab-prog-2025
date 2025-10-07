@@ -1,9 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background-color: #f6f7f9;
-  font-family: "Inter", "Playfair Display";
+  font-family: "Playfair Display";
 }
 
 header {
@@ -120,7 +119,7 @@ header {
   text-indent: 20px;
 }
 
-.nosTitulo {
+.titulo {
   font-family: "Playfair Display";
   font-size: 50px;
   font-weight: 100;
@@ -153,6 +152,7 @@ header {
 /* INICIO SECCION CAJA COMIDAS */
 .cajaComidas{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 400px;
@@ -197,18 +197,19 @@ header {
 }
 
 /* INICIO FOOTER */
+
 .piePagina {
   background-color: #212830;
-  height: auto;
-  padding: 4%;
+  height: 400px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
 }
 
 .logoFooter {
-	width: 128px;
-	height: 128px;
+	width: 192px;
+	height: 192px;
 	/*background-color: blue;*/
 }
 
@@ -219,10 +220,47 @@ header {
 	object-fit: cover;
 }
 
+.listadoFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listadoFooter a {
+  display: block;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
 .contactoFooter{
-	width: 512px;
-	height: 128px;
-	background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 30px;
+	width: 768px;
+	background-color: #262b38;
+  color: white
+}
+
+.containerUsers{
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+  padding: 20px;
+}
+
+.devUser{
+  background-color: #ffffff;
+  width: 200px;
+  height: 200px
 }
 
 /* FIN FOOTER */ 
