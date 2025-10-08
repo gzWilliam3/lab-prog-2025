@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: inter;
+  font-family: "Playfair Display";
   background-color: #e1e3e8;
 }
 
@@ -10,11 +10,6 @@ header {
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-}
-
-a:hover {
-  border-bottom: 2px solid black;
-  background-color: lightgray;
 }
 
 /* SECCION DEL NAV */
@@ -34,11 +29,12 @@ a:hover {
   color: black;
   font-size: 16px;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 30px;
 }
 
-main .listado {
-  padding: 30px;
+.listado a:hover {
+  border-bottom: 2px solid black;
+  background-color: lightgray;
 }
 
 /* FIN DEL SECCION DEL NAV */
@@ -79,6 +75,10 @@ main .listado {
   padding: 20px;
 }
 
+.listaSubproductos h2{
+  font-size: 40px;
+}
+
 .grillaSubproductos {
   display: grid;
   gap: 30px;
@@ -117,6 +117,7 @@ main .listado {
   white-space: wrap;
   text-overflow: ellipsis; /* checkear porque no funciona cuando achico pantalla /*/
   overflow: hidden;
+  font-family: "Inter";
 }
 
 .contenedorFotoProducto {
@@ -133,7 +134,91 @@ main .listado {
   border-radius: 30px;
 }
 
-.piePagina {
-  background-color: rgb(26, 25, 25);
-  height: 100px;
+.gradienteFooter{
+  height:150px;
+  background: #E1E3E8;
+  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
 }
+
+/* INICIO FOOTER */
+footer{
+  font-family: "Inter";
+
+}
+
+.piePagina {
+  background-color: #212830;
+  height: auto;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.piePagina h3, a{
+  color: white;
+}
+
+.piePagina a {
+  display: block;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.logoFooter {
+	width: 192px;
+	height: 192px;
+	/*background-color: blue;*/
+}
+
+.logoFooter img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.listadoFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contactoFooter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 30px;
+	width: auto;
+	background-color: #373d4c;
+}
+
+.containerUsers{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.devUser{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 300px;
+  height: 50px
+}
+
+.logoGitHub{
+  width: 20px;
+  height: 20px;
+}
+
+/* FIN FOOTER */ 

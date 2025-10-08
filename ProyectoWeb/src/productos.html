@@ -4,11 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/productStyle.css" />
+    <link rel="icon" href="assets/icons/favicon.ico">
 
+    <!-- LINKS DE LA FUENTE DE GOOGLE FONTS -->
+
+    <!-- Fuentes INTER y PLAYFAIR DISPLAY-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
 
@@ -40,11 +44,11 @@
       <!-- Inicio navegacion de comidas-->
       <nav class="navContenedorComidas">
         <ul class="listado">
-          <li><a href="#linkPasta">Pasta</a></li>
-          <li><a href="#linkEspecialidad">Especialidad</a></li>
-          <li><a href="#linkSandwich">Sandwich</a></li>
-          <li><a href="#linkNuggets">Nuggets</a></li>
-          <li><a href="#linkEnsalada">Ensalada</a></li>
+          <li><a href="#linkPasta">- Pasta -</a></li>
+          <li><a href="#linkEspecialidad">- Especialidad -</a></li>
+          <li><a href="#linkSandwich">- Sandwich -</a></li>
+          <li><a href="#linkNuggets">- Nuggets -</a></li>
+          <li><a href="#linkEnsalada">- Ensalada -</a></li>
         </ul>
       </nav>
       <!-- Fin navegacion comidas-->
@@ -55,7 +59,7 @@
         <section class="listaProductos">
           <!-- Inicio subproductos PASTA-->
           <section class="listaSubproductos">
-            <h2 id="linkPasta">Pasta</h2>
+            <h2 id="linkPasta">- Pasta -</h2>
 
             <section class="grillaSubproductos">
               <div class="producto">
@@ -120,7 +124,7 @@
 
           <!-- Inicio subproductos ESPECIALIDAD-->
           <section class="listaSubproductos">
-            <h2 id="linkEspecialidad">Especialidad</h2>
+            <h2 id="linkEspecialidad">- Especialidad -</h2>
 
             <section class="grillaSubproductos">
               <div class="producto">
@@ -166,7 +170,7 @@
 
           <!-- Inicio subproductos SANDWICH-->
           <section class="listaSubproductos">
-            <h2 id="linkSandwich">Sandwich</h2>
+            <h2 id="linkSandwich">- Sandwich -</h2>
 
             <section class="grillaSubproductos">
               <div class="producto">
@@ -269,7 +273,7 @@
 
           <!-- inicio seccion subproductos NUGGETS-->
           <section class="listaSubproductos">
-            <h2 id="linkNuggets">Nuggets</h2>
+            <h2 id="linkNuggets">- Nuggets -</h2>
 
             <section class="grillaSubproductos">
               <div class="producto">
@@ -315,7 +319,7 @@
 
           <!-- Inicio seccion subproductos ENSALADAS-->
           <section class="listaSubproductos">
-            <h2 id="linkEnsalada">Ensalada</h2>
+            <h2 id="linkEnsalada">- Ensalada -</h2>
 
             <!-- inicio grilla ensaladas -->
             <section class="grillaSubproductos">
@@ -367,8 +371,49 @@
     </main>
     <!-- Fin MAIN-->
 
-    <!-- Footer -->
-    <footer class="piePagina"></footer>
-    <!-- Fin de footer -->
+    <div class="gradienteFooter"></div>
+    
+    <!-- INICIO DE FOOTER -->
+    <footer class="piePagina">
+      <div class="logoFooter">
+        <img src="assets/logo/buenMorfar256_blanco.png" alt="Logo en blanco" />
+      </div>
+
+      <ul class="listadoFooter">
+        <li>
+          <a href="index.html">- Home -</a>
+        </li>
+        <li>
+          <a href="#seccionNosotros">- Nosotros -</a>
+        </li>
+        <li>
+          <a href="productos.html">- Productos -</a>
+        </li>
+      </ul>
+
+      <div class="contactoFooter">
+        <h3>- Diseño y desarrollo -</h3>
+
+        <div class="containerUsers">
+          <div class="devUser">
+            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3/lab-prog-2025">Repositorio del Grupo 16</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/francisconunez-PG">Francisco Nuñez Ardanaz</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/tsantiagogonzalez">Tomas Santiago Gonzalez</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3">William Agustin Gonzalez</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FIN DE FOOTER -->
   </body>
 </html>

@@ -12,6 +12,10 @@ header {
   background-color: #ffffff;
 }
 
+p{
+  font-family: "Inter";
+}
+
 /* SECCION DEL NAV */
 .listado {
   display: flex;
@@ -29,7 +33,7 @@ header {
 .listado a {
   display: block;
   color: black;
-  font-family: "Playfair Dipslay";
+  font-family: "Playfair Display";
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
@@ -97,8 +101,8 @@ header {
 /* FIN SECCION IMAGEN FONDO Y LOGO */
 
 
-/* INICIO SECCION NOSOTROS */
-#seccionNosotros {
+/* INICIO SECCION NOSOTROS y UBICACION */
+#seccionNosotros, #seccionUbicacion{
   /*border: 1px solid black; /* Borrar despues */
   height: 500px;
   display: flex;
@@ -106,15 +110,13 @@ header {
   gap: 100px;
 }
 
-.containerNosotros,
-.imgNosotros {
+.containerNosotros, .containerUbicacion {
   flex: 1;
-  min-width: 200px;
-  /*border: 1px solid black; /* Borrar despues */
-}
-
-.containerNosotros {
-  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
   text-align: justify;
   text-indent: 20px;
 }
@@ -127,21 +129,20 @@ header {
   color: black;
 }
 
-.containerNosotros p{
-  padding: 0px 50px 0px 50px;
-  font-family: "Playfair Display";
+.containerNosotros p, .containerUbicacion p{
+  padding:50px;
 }
 
-.imgNosotros {
-  max-height: 500px;
+.imgMain {
+  max-width: 50%;
 }
 
-.imgNosotros img{
+.imgMain img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* FIN SECCION NOSOTROS */
+/* FIN SECCION NOSOTROS y UBICACION*/
 
 .gradienteACaja{
   height: 200px;
@@ -197,14 +198,30 @@ header {
 }
 
 /* INICIO FOOTER */
+footer{
+  font-family: "Inter";
+
+}
 
 .piePagina {
   background-color: #212830;
-  height: 400px;
+  height: auto;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.piePagina h3, a{
+  color: white;
+}
+
+.piePagina a {
+  display: block;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
 }
 
 .logoFooter {
@@ -230,37 +247,35 @@ header {
   padding: 0;
 }
 
-.listadoFooter a {
-  display: block;
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  padding: 10px 15px;
-}
-
 .contactoFooter{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
-  gap: 10px;
   border-radius: 30px;
-	width: 768px;
-	background-color: #262b38;
-  color: white
+	width: auto;
+	background-color: #373d4c;
 }
 
 .containerUsers{
   display: flex;
-  flex-direction: row;
-  gap:50px;
-  padding: 20px;
+  flex-direction: column;
+  gap:10px;
 }
 
 .devUser{
-  background-color: #ffffff;
-  width: 200px;
-  height: 200px
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 300px;
+  height: 50px
+}
+
+.logoGitHub{
+  width: 20px;
+  height: 20px;
 }
 
 /* FIN FOOTER */ 
