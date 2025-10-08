@@ -11,6 +11,9 @@ El objetivo es comprender y demostrar la aplicación práctica de ambos concepto
 [Link Informe TPO1](https://docs.google.com/document/d/15ouBH6mqtyFgFOFW3gO527LFg4N5KLxveZAXXVW6Uac/edit?usp=sharing)
 
 ## Proyecto Web: Restaurante "Buen Morfar"
+<p align="center">
+  <img src="ProyectoWeb/src/assets/logo/buenMorfar256_blanco.png" alt="Buen Morfar logo">
+</p>
 Se desarrolla el dominio correspondiente a un restaurante especializado en cocina gourmet, "Buen Morfar". Su propuesta se centra en brindar una experiencia culinaria única, dirigida tanto a comensales exigentes como a locales y hostels de categoría.
 
 El trabajo se desarrolla a lo largo de 3 entregas:
