@@ -153,16 +153,16 @@ footer{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around ;
 }
 
-.piePagina h3, a{
+.piePagina h4, a{
   color: white;
 }
 
 .piePagina a {
   display: block;
-  font-size: 16px;
+  font-size: 10px;
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -170,7 +170,6 @@ footer{
 .logoFooter {
 	width: 192px;
 	height: 192px;
-	/*background-color: blue;*/
 }
 
 .logoFooter img{
@@ -195,25 +194,23 @@ footer{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   border-radius: 30px;
 	width: auto;
 	background-color: #373d4c;
 }
 
 .containerUsers{
-  display: flex;
-  flex-direction: column;
-  gap:10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 20px;
 }
 
 .devUser{
   display: flex;
   flex-direction: row;
-  gap: 20px;
   align-items: center;
-  width: 300px;
-  height: 50px
+  justify-content: center;
+  width: 250px;
 }
 
 .logoGitHub{
