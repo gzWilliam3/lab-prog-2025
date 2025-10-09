@@ -1,0 +1,102 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "tipo": "Pasta",
+            "nombre": "Pasta con Queso",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 2,
+            "tipo": "Pasta",
+            "nombre": "Pasta y Verduras",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 3,
+            "tipo": "Pasta",
+            "nombre": "Pasta con Albondigas",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 4,
+            "tipo": "Especialidad",
+            "nombre": "Hamburguesa 'Buen Morfar'",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 5,
+            "tipo": "Especialidad",
+            "nombre": "Pollo 'A la Morfar' & Papas Rusticas",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 6,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Carne BBQ",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 7,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 8,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo & Papas Fritas",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 9,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo y Queso",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 10,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Soja BBQ",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 11,
+            "tipo": "Nuggets",
+            "nombre": "Nuggets de Pollo",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 12,
+            "tipo": "Nuggets",
+            "nombre": "Nuggets de Verdura",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 13,
+            "tipo": "Ensalada",
+            "nombre": "Ensalada de Champiñones & Cosas Verdes",
+            "descripcion": "",
+            "imagen" : ""
+        },
+        {
+            "id": 14,
+            "tipo": "Ensalada",
+            "nombre": "Ensalada Verde",
+            "descripcion": "",
+            "imagen" : ""
+        }
+    ]
+}
