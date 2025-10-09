@@ -1,0 +1,18 @@
+{
+    "productosNuggets": [
+        {
+            "id": 11,
+            "tipo": "Nuggets",
+            "nombre": "Nuggets de Pollo",
+            "descripcion": "",
+            "imagen" : "../assets/comida/nuggets/nuggetsPollo.jpeg"
+        },
+        {
+            "id": 12,
+            "tipo": "Nuggets",
+            "nombre": "Nuggets de Verdura",
+            "descripcion": "",
+            "imagen" : "../assets/comida/nuggets/nuggetsVerdura.jpeg"
+        }
+    ]
+}

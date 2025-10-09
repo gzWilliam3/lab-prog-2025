@@ -1,0 +1,25 @@
+{
+    "productosPasta": [
+        {
+            "id": 1,
+            "tipo": "Pasta",
+            "nombre": "Pasta con Queso",
+            "descripcion": "",
+            "imagen" : "../assets/comida/pasta/pastaQueso.jpeg"
+        },
+        {
+            "id": 2,
+            "tipo": "Pasta",
+            "nombre": "Pasta y Verduras",
+            "descripcion": "",
+            "imagen" : "../assets/comida/pasta/pasta&verduras.jpg"
+        },
+        {
+            "id": 3,
+            "tipo": "Pasta",
+            "nombre": "Pasta con Albondigas",
+            "descripcion": "",
+            "imagen" : "../assets/comida/pasta/pastaAlbondigas.jpeg"
+        }
+    ]
+}
