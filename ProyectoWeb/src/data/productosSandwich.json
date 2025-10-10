@@ -1,0 +1,39 @@
+{
+    "productosSandwich": [
+        {
+            "id": 6,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Carne BBQ",
+            "descripcion": "",
+            "imagen" : "../assets/comida/sandwich/sandwichCarneBarbacoa.jpg"
+        },
+        {
+            "id": 7,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo",
+            "descripcion": "",
+            "imagen" : "../assets/comida/sandwich/sandwichPollo.jpg"
+        },
+        {
+            "id": 8,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo & Papas Fritas",
+            "descripcion": "",
+            "imagen" : "../assets/comida/sandwich/sandwichPolloPapas.jpg"
+        },
+        {
+            "id": 9,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Pollo y Queso",
+            "descripcion": "",
+            "imagen" : "../assets/comida/sandwich/sandwichPolloQueso.jpeg"
+        },
+        {
+            "id": 10,
+            "tipo": "Sandwich",
+            "nombre": "Sandwich de Soja BBQ",
+            "descripcion": "",
+            "imagen" : "../assets/comida/sandwich/sandwichSojaBarbacoa.jpeg"
+        }
+    ]
+}
