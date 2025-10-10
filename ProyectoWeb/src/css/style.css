@@ -122,11 +122,13 @@ p{
 }
 
 .titulo {
-  font-family: "Playfair Display";
-  font-size: 50px;
-  font-weight: 100;
+  font-family: "Playfair Display", serif;
+  font-size: 36px; 
+  font-weight: 400;
   text-align: center;
-  color: black;
+  color: black; 
+  margin-top: 40px;  
+  margin-bottom: 20px; 
 }
 
 .containerNosotros p, .containerUbicacion p{
