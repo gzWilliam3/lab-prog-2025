@@ -4,15 +4,15 @@
             "id": 4,
             "tipo": "Especialidad",
             "nombre": "Hamburguesa 'Buen Morfar'",
-            "descripcion": "",
-            "imagen" : "../assets/comida/especialidad/hamburguesa.jpg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/especialidad/hamburguesa.jpg"
         },
         {
             "id": 5,
             "tipo": "Especialidad",
             "nombre": "Pollo 'A la Morfar' & Papas Rusticas",
-            "descripcion": "",
-            "imagen" : "../assets/comida/especialidad/polloPapas.jpg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/especialidad/polloPapas.jpg"
         }
     ]
 }
