@@ -1,5 +1,8 @@
 cargarPasta();
 cargarEspecialidad();
+cargarSandwich();
+cargarNuggets();
+cargarEnsalada();
 
 function cargarPasta(){
     // Creo variable contenedor con el elemento del HTML que contiene los elementos repetibles
@@ -30,7 +33,7 @@ function cargarPasta(){
                         <img
                             class="fotoProducto"
                             src="${pasta.imagen}"
-                            alt="Imagen de pasta con queso"
+                            alt="${pasta.alt}"
                         />
                     </div>
                 `;
@@ -62,7 +65,7 @@ function cargarEspecialidad(){
                         <img
                             class="fotoProducto"
                             src="${especialidad.imagen}"
-                            alt="Imagen de pasta con queso"
+                            alt="${especialidad.alt}"
                         />
                     </div>
                 `;
@@ -72,32 +75,92 @@ function cargarEspecialidad(){
 }
 
 function cargarSandwich(){
-    let arrSandwich;
+    const contenedor = document.getElementById("grillaDeSandwich");
     fetch("./data/productosSandwich.json")
         .then(respuesta => respuesta.json())
-        .then(datos => {
-            arrSandwich = datos;
-            console.log(arrSandwich);
+        .then(arrSandwich => {
+            contenedor.innerHTML = "";
+
+            arrSandwich.productosSandwich.forEach(sandwich => {
+                const divProducto = document.createElement("div");
+                divProducto.classList.add("producto")
+
+                divProducto.innerHTML = `
+                    <div class="textoProducto">
+                        <p class="nombreProducto">${sandwich.nombre}</p>
+                        <p class="descripcionProducto">${sandwich.descripcion}</p>
+                    </div>
+
+                    <div class="contenedorFotoProducto">
+                        <img
+                            class="fotoProducto"
+                            src="${sandwich.imagen}"
+                            alt="${sandwich.alt}"
+                        />
+                    </div>
+                `;
+                contenedor.appendChild(divProducto);
+            });
         })
 }
 
 function cargarNuggets(){
-    let arrNuggets;
+    const contenedor = document.getElementById("grillaDeNuggets");
     fetch("./data/productosNuggets.json")
         .then(respuesta => respuesta.json())
-        .then(datos => {
-            arrNuggets = datos;
-            console.log(arrNuggets);
+        .then(arrNuggets => {
+            contenedor.innerHTML = "";
+
+            arrNuggets.productosNuggets.forEach(nugget => {
+                const divProducto = document.createElement("div");
+                divProducto.classList.add("producto")
+
+                divProducto.innerHTML = `
+                    <div class="textoProducto">
+                        <p class="nombreProducto">${nugget.nombre}</p>
+                        <p class="descripcionProducto">${nugget.descripcion}</p>
+                    </div>
+
+                    <div class="contenedorFotoProducto">
+                        <img
+                            class="fotoProducto"
+                            src="${nugget.imagen}"
+                            alt="${nugget.alt}"
+                        />
+                    </div>
+                `;
+                contenedor.appendChild(divProducto);
+            });
         })
 }
 
 function cargarEnsalada(){
-    let arrEnsalada;
+    const contenedor = document.getElementById("grillaDeEnsalada");
     fetch("./data/productosEnsalada.json")
         .then(respuesta => respuesta.json())
-        .then(datos => {
-            arrEnsalada = datos;
-            console.log(arrEnsalada);
+        .then(arrEnsalada => {
+            contenedor.innerHTML = "";
+
+            arrEnsalada.productosEnsalada.forEach(ensalada => {
+                const divProducto = document.createElement("div");
+                divProducto.classList.add("producto")
+
+                divProducto.innerHTML = `
+                    <div class="textoProducto">
+                        <p class="nombreProducto">${ensalada.nombre}</p>
+                        <p class="descripcionProducto">${ensalada.descripcion}</p>
+                    </div>
+
+                    <div class="contenedorFotoProducto">
+                        <img
+                            class="fotoProducto"
+                            src="${ensalada.imagen}"
+                            alt="${ensalada.alt}"
+                        />
+                    </div>
+                `;
+                contenedor.appendChild(divProducto);
+            });
         })
 }
 
