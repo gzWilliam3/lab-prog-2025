@@ -1,18 +1,22 @@
 {
-    "productosNuggets": [
-        {
-            "id": 11,
-            "tipo": "Nuggets",
-            "nombre": "Nuggets de Pollo",
-            "descripcion": "",
-            "imagen" : "../assets/comida/nuggets/nuggetsPollo.jpeg"
-        },
-        {
-            "id": 12,
-            "tipo": "Nuggets",
-            "nombre": "Nuggets de Verdura",
-            "descripcion": "",
-            "imagen" : "../assets/comida/nuggets/nuggetsVerdura.jpeg"
-        }
-    ]
+  "productosNuggets": [
+    {
+      "id": 13,
+      "nombre": "Nuggets de Pollo",
+      "descripcion": "Crujientes por fuera, tiernos por dentro, con salsa barbacoa.",
+      "imagen": "assets/comida/nuggets/nuggetsPollo.jpeg"
+    },
+    {
+      "id": 14,
+      "nombre": "Nuggets de Verdura",
+      "descripcion": "Deliciosos bocados de zanahoria, calabaza y arvejas.",
+      "imagen": "assets/comida/nuggets/nuggetsVerdura.jpeg"
+    },
+    {
+      "id": 15,
+      "nombre": "Nuggets de Queso",
+      "descripcion": "Nuggets rellenos de queso fundido, ideales como snack.",
+      "imagen": "assets/comida/nuggets/nuggetsQueso.jpg"
+    }
+  ]
 }

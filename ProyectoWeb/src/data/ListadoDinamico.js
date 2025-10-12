@@ -3,7 +3,7 @@ ListadoDinamico.js
 document.addEventListener("DOMContentLoaded", async () => {
   const contenedor = document.querySelector(".listaProductos");
 
-  // Rutas a todos los archivos JSON
+  // Rutas corregidas para tu estructura de archivos: los JSON están en la carpeta 'data/'
   const archivosJSON = [
     "data/productosPasta.json",
     "data/productosSandwich.json",
@@ -36,15 +36,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Cargar todos los archivos JSON y combinarlos
   async function cargarTodosLosPlatos() {
     try {
+      // Intenta cargar todos los archivos JSON simultáneamente
       const respuestas = await Promise.all(archivosJSON.map(r => fetch(r)));
+      
+      // Verifica si alguna respuesta fue incorrecta (ej. 404 No encontrado)
+      for (const respuesta of respuestas) {
+          if (!respuesta.ok) {
+              throw new Error(`Error al cargar el archivo: ${respuesta.url}, estado: ${respuesta.status}`);
+          }
+      }
+      
+      // Parsea todas las respuestas a JSON
       const datos = await Promise.all(respuestas.map(r => r.json()));
 
-      // Unir todos los productos en un solo array
+      // Unir todos los productos en un solo array.
+      // Usa Object.values(d)[0] para obtener el array de productos de cada objeto JSON.
       platos = datos.flatMap(d => Object.values(d)[0]);
 
+      // Muestra la primera tanda de platos
       mostrarMasPlatos();
     } catch (error) {
-      console.error("Error al cargar los archivos JSON:", error);
+      console.error("Error crítico al cargar los archivos JSON:", error);
+      // Opcional: mostrar un mensaje de error al usuario en el contenedor
+      contenedor.innerHTML = "<p style='color: red; padding: 20px; text-align: center;'>Error al cargar el menú. Por favor, verifica la ruta de tus archivos JSON.</p>";
     }
   }
 
@@ -59,15 +73,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedor.appendChild(fragment);
   }
 
-  // Detectar scroll al final
+  // Detectar scroll al final para carga infinita
   window.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-
-    if (scrollTop + clientHeight >= scrollHeight - 10) {
+    
+    // Si quedan platos por cargar y el usuario está cerca del final de la página
+    if (indice < platos.length && (scrollTop + clientHeight >= scrollHeight - 50)) {
       mostrarMasPlatos();
     }
   });
 
-  // Inicializar
+  // Inicializar la carga
   await cargarTodosLosPlatos();
 });

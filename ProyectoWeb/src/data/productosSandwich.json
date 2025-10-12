@@ -1,39 +1,28 @@
 {
-    "productosSandwich": [
-        {
-            "id": 6,
-            "tipo": "Sandwich",
-            "nombre": "Sandwich de Carne BBQ",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichCarneBarbacoa.jpg"
-        },
-        {
-            "id": 7,
-            "tipo": "Sandwich",
-            "nombre": "Sandwich de Pollo",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPollo.jpg"
-        },
-        {
-            "id": 8,
-            "tipo": "Sandwich",
-            "nombre": "Sandwich de Pollo & Papas Fritas",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPolloPapas.jpg"
-        },
-        {
-            "id": 9,
-            "tipo": "Sandwich",
-            "nombre": "Sandwich de Pollo y Queso",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPolloQueso.jpeg"
-        },
-        {
-            "id": 10,
-            "tipo": "Sandwich",
-            "nombre": "Sandwich de Soja BBQ",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichSojaBarbacoa.jpeg"
-        }
-    ]
+  "productosSandwich": [
+    {
+      "id": 9,
+      "nombre": "Sandwich de Carne BBQ",
+      "descripcion": "Carne tierna a la barbacoa con cebolla caramelizada.",
+      "imagen": "assets/comida/sandwich/sandwichCarneBarbacoa.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Sandwich de Pollo",
+      "descripcion": "Pechuga grillada con lechuga, tomate y mayonesa casera.",
+      "imagen": "assets/comida/sandwich/sandwichPollo.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Sandwich de Pollo & Papas",
+      "descripcion": "Sandwich de pollo acompañado de papas fritas crocantes.",
+      "imagen": "assets/comida/sandwich/sandwichPolloPapas.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "Sandwich de Soja BBQ",
+      "descripcion": "Versión vegetariana con soja barbacoa y vegetales grillados.",
+      "imagen": "assets/comida/sandwich/sandwichSojaBarbacoa.jpeg"
+    }
+  ]
 }
