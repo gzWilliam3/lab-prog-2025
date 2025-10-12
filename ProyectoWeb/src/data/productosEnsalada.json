@@ -4,15 +4,17 @@
             "id": 13,
             "tipo": "Ensalada",
             "nombre": "Ensalada de Champiñones & Cosas Verdes",
-            "descripcion": "",
-            "imagen" : "../assets/comida/ensaladas/ensalada1.jpeg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/ensaladas/ensaladaChampi.jpeg",
+            "alt": "Imagen de un plato de Ensalada de Champignones y Verduras verdes"
         },
         {
             "id": 14,
             "tipo": "Ensalada",
             "nombre": "Ensalada Verde",
-            "descripcion": "",
-            "imagen" : "../assets/comida/ensaladas/ensalada2.jpeg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/ensaladas/ensaladaVerde.jpeg",
+            "alt": "Imagen de un plato de Ensalada Verde con Lechuga y Pepino"
         }
     ]
 }

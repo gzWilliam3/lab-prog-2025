@@ -4,36 +4,41 @@
             "id": 6,
             "tipo": "Sandwich",
             "nombre": "Sandwich de Carne BBQ",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichCarneBarbacoa.jpg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/sandwich/sandwichCarneBarbacoa.jpg",
+            "alt": "Imagen de un Sandwich de Carne a la Barbacoa"
         },
         {
             "id": 7,
             "tipo": "Sandwich",
             "nombre": "Sandwich de Pollo",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPollo.jpg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/sandwich/sandwichPollo.jpg",
+            "alt": "Imagen de un Sandwich de Pollo"
         },
         {
             "id": 8,
             "tipo": "Sandwich",
             "nombre": "Sandwich de Pollo & Papas Fritas",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPolloPapas.jpg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/sandwich/sandwichPolloPapas.jpg",
+            "alt": "Imagen de un Sandwich de Pollo y Papas"
         },
         {
             "id": 9,
             "tipo": "Sandwich",
             "nombre": "Sandwich de Pollo y Queso",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichPolloQueso.jpeg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/sandwich/sandwichPolloQueso.jpeg",
+            "alt": "Imagen de un Sandiwch de Pollo con Queso"
         },
         {
             "id": 10,
             "tipo": "Sandwich",
             "nombre": "Sandwich de Soja BBQ",
-            "descripcion": "",
-            "imagen" : "../assets/comida/sandwich/sandwichSojaBarbacoa.jpeg"
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
+            "imagen" : "./assets/comida/sandwich/sandwichSojaBarbacoa.jpeg",
+            "alt": "Imagen de un Sandwich de Soja a la Barbacoa"
         }
     ]
 }

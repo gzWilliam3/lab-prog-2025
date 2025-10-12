@@ -5,21 +5,24 @@
             "tipo": "Pasta",
             "nombre": "Pasta con Queso",
             "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
-            "imagen" : "./assets/comida/pasta/pastaQueso.jpeg"
+            "imagen" : "./assets/comida/pasta/pastaQueso.jpeg",
+            "alt" : "Imagen de un plato de Pasta con Queso"
         },
         {
             "id": 2,
             "tipo": "Pasta",
             "nombre": "Pasta y Verduras",
             "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
-            "imagen" : "./assets/comida/pasta/pasta&verduras.jpg"
+            "imagen" : "./assets/comida/pasta/pasta&verduras.jpg",
+            "alt": "Imagen de un plato de Pasta con Verduras"
         },
         {
             "id": 3,
             "tipo": "Pasta",
             "nombre": "Pasta con Albondigas",
             "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio enim voluptas tempore nihil quisquam unde veritatisconsectetur dicta maiores.",
-            "imagen" : "./assets/comida/pasta/pastaAlbondigas.jpeg"
+            "imagen" : "./assets/comida/pasta/pastaAlbondigas.jpeg",
+            "alt": "Imagen de un  plato de Pasta con Albondigas"
         }
     ]
 }
