@@ -1,4 +1,4 @@
-ListadoDinamico.js
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   const contenedor = document.querySelector(".listaProductos");
