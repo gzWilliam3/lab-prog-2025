@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Definición de las rutas a los archivos JSON.
   const archivosJSON = [
-    { key: "productosPasta", url: "data/productosPasta.json" },
-    { key: "productosSandwich", url: "data/productosSandwich.json" },
-    { key: "productosEspecialidad", url: "data/productosEspecialidad.json" },
-    { key: "productosNuggets", url: "data/productosNuggets.json" },
-    { key: "productosEnsalada", url: "data/productosEnsalada.json" }
+    { key: "productosPasta", url: "public/productosPasta.json" },
+    { key: "productosSandwich", url: "public/productosSandwich.json" },
+    { key: "productosEspecialidad", url: "public/productosEspecialidad.json" },
+    { key: "productosNuggets", url: "public/productosNuggets.json" },
+    { key: "productosEnsalada", url: "public/productosEnsalada.json" }
   ];
 
   // Variables de Estado
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   let indice = 0;                  // Controla el punto de inicio de la paginación.
   const cantidadPorCarga = 4;      // Define cuántos platos se cargan con el scroll infinito.
-
+S
 
   //Crea el elemento HTML (div.producto) para un plato dado.
   function crearProducto(plato) {
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (error) {
       console.error("Error crítico al cargar los archivos JSON:", error);
-      contenedor.innerHTML = "<p style='color: red; padding: 20px; text-align: center;'>Error al cargar el menú. Asegúrate de usar Live Server.</p>";
+      contenedor.innerHTML = "<p style='color: red; padding: 20px; text-align: center;'>Error al cargar el menú</p>";
     }
   }
 
