@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "id": 4,
         "nombre": "Fettuccine Alfredo",
         "descripcion": "Fettuccine en salsa Alfredo cremosa con parmesano y manteca.",
-        "imagen": "../assets/comida/pasta/fettuccineAlfredo.jpg"
+        "imagen": "../assets/comida/pasta/fettuccineAlfredo.png"
       },
       {
         "id": 5,
         "nombre": "Ravioles de Ricotta y Espinaca",
         "descripcion": "Ravioles artesanales servidos con salsa de tomate y albahaca.",
-        "imagen": "../assets/comida/pasta/raviolesRicotta.jpg"
+        "imagen": "../assets/comida/pasta/raviolesRicotaEspinaca.png"
       }
     ],
     productosSandwich: [
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "id": 8,
         "nombre": "Lomo a la Parrilla",
         "descripcion": "Lomo tierno con chimichurri artesanal y guarnición a elección.",
-        "imagen": "../assets/comida/especialidad/lomoParrilla.jpg"
+        "imagen": "../assets/comida/especialidad/lomoParrilla.png"
       }
     ],
     productosNuggets: [
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "id": 15,
         "nombre": "Nuggets de Queso",
         "descripcion": "Nuggets rellenos de queso fundido, ideales como snack.",
-        "imagen": "../assets/comida/nuggets/nuggetsQueso.jpg"
+        "imagen": "../assets/comida/nuggets/nuggetsQueso.png"
       }
     ],
     productosEnsalada: [
@@ -114,13 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "id": 17,
         "nombre": "Ensalada César",
         "descripcion": "Clásica con pollo grillado, parmesano y crutones.",
-        "imagen": "../assets/comida/ensaladas/ensaladaCesar.jpg"
+        "imagen": "../assets/comida/ensaladas/ensaladaCesar.png"
       },
       {
         "id": 18,
         "nombre": "Ensalada Mediterránea",
         "descripcion": "Con tomate, aceitunas, queso feta y aceite de oliva.",
-        "imagen": "../assets/comida/ensaladas/ensaladaMediterranea.jpg"
+        "imagen": "../assets/comida/ensaladas/ensaladaMedi.png"
       },
       {
         "id": 19,
