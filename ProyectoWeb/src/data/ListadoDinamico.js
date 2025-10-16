@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-  let platos = [];
-  let indice = 0;
+  //let platos = [];  //deshuso
+  //let indice = 0;
   const cantidadPorCarga = 2; // cantidad de platos por tanda
 
   // Crea el HTML de cada producto
