@@ -12,6 +12,10 @@ header {
   background-color: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* SECCION DEL NAV */
 .listado {
   display: flex;
@@ -140,6 +144,21 @@ header {
   background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
 }
 
+.mensajeVoto {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  font-family: "Inter";
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+
 /* INICIO FOOTER */
 footer{
   font-family: "Inter";
@@ -217,5 +236,6 @@ footer{
   width: 20px;
   height: 20px;
 }
+
 
 /* FIN FOOTER */ 

@@ -162,41 +162,113 @@ p{
   background-color: #e1e3e8;
 }
 
-.containerComidas{
-  display: inherit;
-  height: auto;
-  gap:30px;
+.containerComidas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
   padding: 30px;
   background-color: #ffffff;
-  justify-content: space-around;
-  align-items: center;
   border-radius: 30px;
 }
 
-.eltoComida{
+
+.eltoComida {
   width: 200px;
   height: 200px;
-  border-radius: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e4e4e4; 
+  flex-shrink: 0;
 }
 
-.eltoComida img{
+.eltoComida img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 30px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.eltoComida img:hover{
-  transform: scale(1.1);
+  border-radius: 20px;
   transition: transform 0.3s ease;
 }
+
+.eltoComida img:hover {
+  transform: scale(1.08);
+}
+
 /* FIN SECCION CAJA DE COMIDAS */
 
 .gradienteFooter{
   height:300px;
   background: #E1E3E8;
   background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
+}
+
+/* ranking de comidas */
+.platoRanking {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #ccc; /* si no hay imagen */
+}
+
+.rankingInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 0 0 20px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.rankingPos {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+.rankingNombre {
+  font-size: 13px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.platoRanking img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+
+.rankingEtiqueta {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+
+}
+
+.platoRanking:hover img {
+  transform: scale(1.1);
+}
+/* FIN ranking de comidas */
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* INICIO FOOTER */
@@ -276,5 +348,28 @@ footer{
   width: 20px;
   height: 20px;
 }
-
 /* FIN FOOTER */ 
+
+/* Banda negra semitransparente */
+.overlayInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.overlayInfo .rankingEtiqueta {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.overlayInfo .nombrePlato {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+}
