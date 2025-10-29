@@ -152,51 +152,7 @@ p{
   background: linear-gradient(to bottom, rgba(246, 247, 249, 1) 35%, rgba(225, 227, 232, 1) 90%);
 }
 
-/* INICIO SECCION CAJA COMIDAS */
-#cajaComidas{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  background-color: #e1e3e8;
-}
 
-.containerComidas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 30px;
-}
-
-
-.eltoComida {
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  background-color: #e4e4e4; 
-  flex-shrink: 0;
-}
-
-.eltoComida img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
-
-.eltoComida img:hover {
-  transform: scale(1.08);
-}
-
-/* FIN SECCION CAJA DE COMIDAS */
 
 .gradienteFooter{
   height:300px;
@@ -265,7 +221,82 @@ p{
 .platoRanking:hover img {
   transform: scale(1.1);
 }
-/* FIN ranking de comidas */
+
+/* INICIO SECCION CAJA COMIDAS */
+#cajaComidas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #e1e3e8;
+}
+
+.containerComidas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+
+
+.eltoComida {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e4e4e4; 
+  flex-shrink: 0;
+}
+
+.eltoComida img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.eltoComida img:hover {
+  transform: scale(1.08);
+}
+
+/* Banda negra semitransparente */
+.overlayInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.overlayInfo .rankingEtiqueta {
+  position: relative;
+  top: -34px;
+  left: 0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.overlayInfo .nombrePlato {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+/* FIN Banda negra semitransparente */
+
+/* FIN SECCION CAJA DE COMIDAS */
+
+/* FIN Ranking de comidas */
 
 html {
   scroll-behavior: smooth;
@@ -350,26 +381,4 @@ footer{
 }
 /* FIN FOOTER */ 
 
-/* Banda negra semitransparente */
-.overlayInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  text-align: center;
-  border-radius: 0 0 20px 20px;
-}
 
-.overlayInfo .rankingEtiqueta {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.overlayInfo .nombrePlato {
-  margin: 2px 0 0;
-  font-size: 13px;
-  font-family: "Inter", sans-serif;
-}

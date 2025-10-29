@@ -131,7 +131,7 @@ html {
 }
 
 .fotoProducto {
-  width: 150px;
+  width: 450px;
   height: 150px;
   object-fit: cover;
   display: block;
@@ -142,6 +142,21 @@ html {
   height:150px;
   background: #E1E3E8;
   background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
+}
+
+/* votacion */
+.btnVotar {
+  background-color: #373d4c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnVotar:hover {
+  background-color: #4b5465;
 }
 
 .mensajeVoto {
@@ -181,7 +196,7 @@ footer{
 
 .piePagina a {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   text-decoration: none;
   padding: 10px 15px;
 }
