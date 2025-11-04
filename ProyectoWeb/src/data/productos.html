@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/productStyle.css" />
-    <link rel="icon" href="assets/icons/favicon.ico">
+    <link rel="stylesheet" href="../css/productStyle.css" />
+    <link rel="icon" href="../assets/icons/favicon.ico">
 
     <!-- LINKS DE LA FUENTE DE GOOGLE FONTS -->
 
@@ -21,7 +21,7 @@
 
   <body>
     <header class="encabezado">
-      <img src="assets/logo/buenMorfar256.png" alt="Logo de 'Buen Morfar'" />
+      <img src="../assets/logo/buenMorfar256.png" alt="Logo de 'Buen Morfar'" />
     </header>
 
     <!-- Barra Nav -->
@@ -49,69 +49,28 @@
           <li><a href="#linkSandwich">- Sandwich -</a></li>
           <li><a href="#linkNuggets">- Nuggets -</a></li>
           <li><a href="#linkEnsalada">- Ensalada -</a></li>
+          <li>- En Progreso... -</li>
         </ul>
+        
       </nav>
       <!-- Fin navegacion comidas-->
 
       <!-- Inicio seccion contenedor productos-->
       <section class="contenedorProductos">
-        <!-- Inicio seccion lista productos-->
         <section class="listaProductos">
-          <!-- Inicio subproductos PASTA-->
-          <section class="listaSubproductos">
-            <h2 id="linkPasta">- Pasta -</h2>
-
-            <section id="grillaDePasta"></section>
-          </section>
-          <!-- Fin subproductos PASTA-->
- 
-          <!-- Inicio subproductos ESPECIALIDAD-->
-          <section class="listaSubproductos">
-            <h2 id="linkEspecialidad">- Especialidad -</h2>
-
-            <section id="grillaDeEspecialidad"></section>
-          </section>
-          <!-- Fin subproductos ESPECIALIDAD-->
-
-          <!-- Inicio subproductos SANDWICH-->
-          <section class="listaSubproductos">
-            <h2 id="linkSandwich">- Sandwich -</h2>
-
-            <section id="grillaDeSandwich"></section>
-
-          </section>
-          <!-- fin subproductos SANDWICH-->
-
-          <!-- inicio seccion subproductos NUGGETS-->
-          <section class="listaSubproductos">
-            <h2 id="linkNuggets">- Nuggets -</h2>
-
-            <section id="grillaDeNuggets"></section>
-
-          </section>
-          <!-- fin seccion subproductos NUGGETS-->
-
-          <!-- Inicio seccion subproductos ENSALADAS-->
-          <section class="listaSubproductos">
-            <h2 id="linkEnsalada">- Ensalada -</h2>
-
-            <section id="grillaDeEnsalada"></section>
-
-          </section>
-          <!-- Fin seccion lista subproductos ENSALADA -->
+      <!-- Los productos se cargan dinámicamente aqui -->
         </section>
-        <!-- Fin seccion lista productos -->
       </section>
-      <!-- Fin seccion contenedor productos-->
+<!-- Fin seccion contenedor productos-->
     </main>
-    <!-- FIN MAIN-->
+    <!-- Fin MAIN-->
 
     <div class="gradienteFooter"></div>
     
     <!-- INICIO DE FOOTER -->
     <footer class="piePagina">
       <div class="logoFooter">
-        <img src="assets/logo/buenMorfar256_blanco.png" alt="Logo en blanco" />
+        <img src="../assets/logo/buenMorfar256_blanco.png" alt="Logo en blanco" />
       </div>
 
       <ul class="listadoFooter">
@@ -125,7 +84,7 @@
           <a href="index.html#seccionUbicacion">- Ubicacion -</a>
         </li>
         <li>
-          <a href="index.html#productos.html">- Productos -</a>
+          <a href="productos.html">- Productos -</a>
         </li>
       </ul>
 
@@ -134,26 +93,26 @@
 
         <div class="containerUsers">
           <div class="devUser">
-            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <img class="logoGitHub" src="../assets/icons/github.png" alt="Logo de GitHub">
             <a href="https://github.com/gzWilliam3/lab-prog-2025">Repositorio del Grupo 16</a>
           </div>
           <div class="devUser">
-            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <img class="logoGitHub" src="../assets/icons/github.png" alt="Logo de GitHub">
             <a href="https://github.com/francisconunez-PG">Francisco Nuñez Ardanaz</a>
           </div>
           <div class="devUser">
-            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <img class="logoGitHub" src="../assets/icons/github.png" alt="Logo de GitHub">
             <a href="https://github.com/tsantiagogonzalez">Tomas Santiago Gonzalez</a>
           </div>
           <div class="devUser">
-            <img class="logoGitHub" src="assets/icons/github.png" alt="Logo de GitHub">
+            <img class="logoGitHub" src="../assets/icons/github.png" alt="Logo de GitHub">
             <a href="https://github.com/gzWilliam3">William Agustin Gonzalez</a>
           </div>
         </div>
       </div>
     </footer>
     <!-- FIN DE FOOTER -->
-
-    <script src="js/productos.js"></script>
+    <script src="ListadoDinamico.js"></script>
+    
   </body>
 </html>
