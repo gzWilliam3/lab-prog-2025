@@ -1,4 +1,12 @@
 
+const contenedor = document.querySelector(".listaProductos");
+let platos = [];
+let indice = 0;
+const cantidadPorCarga = 3;
+let cargando = false;
+
+// Exportar la funcion votarPlato para que sea global.Permite trabajar con platosemanal.
+window.votarPlato = votarPlato;
 
 // Usen asi por ahora.
   window.datosProductos = {
@@ -38,41 +46,11 @@
   };
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-  const contenedor = document.querySelector(".listaProductos");
-  if (!contenedor) return; // evita errores si no está en index.html.
-
-  const platos = Object.values(window.datosProductos).flat();  
-  let indice = 0;
-  const cantidadPorCarga = 2; // cantidad de platos por tanda.
-  let cargando = false;
-
-  // Crea el HTML de cada producto.
-  function crearProducto(plato) {
-  const producto = document.createElement("article");
-  producto.classList.add("producto");
-  producto.setAttribute("aria-label", plato.nombre);
-
-  producto.innerHTML = `
-    <div class="textoProducto">
-      <h3 class="nombreProducto">${plato.nombre}</h3>
-      <p class="descripcionProducto">${plato.descripcion}</p>
-      <button class="btnVotar">Votar</button>
-    </div>
-    <figure class="contenedorFotoProducto">
-      <img class="fotoProducto" src="${plato.imagen}" alt="Imagen de ${plato.nombre}">
-    </figure>
-  `;
-
-  // Evento de voto.
-  producto.querySelector(".btnVotar").addEventListener("click", (e) => {
-    e.stopPropagation();
-    votarPlato(plato.id);
-  });
-
-  return producto;
-}
-
+  if (contenedor) {
+    cargarTodosLosPlatos();
+    window.addEventListener("scroll", cargarMasAlScroll);
+  }
+});
 
 function votarPlato(id) {
   // Traer votos guardados.
@@ -90,44 +68,103 @@ function votarPlato(id) {
   setTimeout(() => aviso.remove(), 1500);
 }
 
-  // Cargar todos los datos embebidos.
-  function cargarTodosLosPlatos() {
-    try {
-      // Une todos los productos en un solo array.
-      platos = Object.values(datosProductos).flat();
+// Cargar los datos.
+function cargarTodosLosPlatos() {
+  try {
+    // Une todos los productos en un solo array.
+    platos = Object.values(window.datosProductos).flat(); // instantaneo...
 
-      mostrarMasPlatos();
-    } catch (error) {
-      console.error("Error al cargar los datos:", error);
-    }
+    mostrarMasPlatos();
+  } catch (error) {
+    console.error("Error al cargar los datos:", error);
   }
+}
 
   // Muestra más platos (por tandas).
   function mostrarMasPlatos() {
     if (cargando) return;
     cargando = true;
     const fragment = document.createDocumentFragment();
+    let categoriaActual = null;
+    let tituloCategoria = null;
 
     for (let i = 0; i < cantidadPorCarga && indice < platos.length; i++, indice++) {
-      const producto = crearProducto(platos[indice]);
-      fragment.appendChild(producto);
-      setTimeout(() => producto.classList.add("visible"), 50 * i);
+      const producto = platos[indice];
+      
+      // añade el encabezado de la categoría.
+      const categoriaKey = Object.keys(window.datosProductos).find(key => window.datosProductos[key].includes(producto));
+      
+      if (categoriaKey !== categoriaActual) {
+          categoriaActual = categoriaKey;
+          
+          let idAnclaje = "";
+          let titulo = "";
+
+          //Mapea la key del plato a su tipo/titulo.
+          switch(categoriaKey) {
+              case 'productosPasta':
+                  idAnclaje = "linkPasta";
+                  titulo = "Pasta";
+                  break;
+              case 'productosEspecialidad':
+                  idAnclaje = "linkEspecialidad";
+                  titulo = "Especialidades";
+                  break;
+              case 'productosSandwich':
+                  idAnclaje = "linkSandwich";
+                  titulo = "Sandwiches";
+                  break;
+              case 'productosNuggets':
+                  idAnclaje = "linkNuggets";
+                  titulo = "Nuggets";
+                  break;
+              case 'productosEnsalada':
+                  idAnclaje = "linkEnsalada";
+                  titulo = "Ensaladas";
+                  break;
+              default:
+                  titulo = "Otros";
+                  idAnclaje = "";
+          }
+
+          tituloCategoria = document.createElement("h2");
+          tituloCategoria.textContent = `- ${titulo} -`;
+          tituloCategoria.classList.add("tituloCategoria");
+          if (idAnclaje) {
+            tituloCategoria.id = idAnclaje; // Asigna el ID para el scroll.
+          }
+          fragment.appendChild(tituloCategoria);
+      }
+      
+      const eltoProducto = crearProducto(producto);
+      fragment.appendChild(eltoProducto);
+      setTimeout(() => eltoProducto.classList.add("visible"), 50 * i);
     }
 
     contenedor.appendChild(fragment);
     cargando = false;
   }
+  
+  // Crea la estructura HTML de un producto.
+  function crearProducto(plato) {
+    const producto = document.createElement("div");
+    producto.classList.add("producto");
 
-  // Detectar scroll al final.
-  window.addEventListener("scroll", () => {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    producto.innerHTML = `
+      <div class="contenedorFotoProducto">
+        <img class="fotoProducto" src="${plato.imagen}" alt="Imagen de ${plato.nombre}">
+      </div>
+      <div class="infoProducto">
+        <h3>${plato.nombre}</h3>
+        <p>${plato.descripcion}</p>
+        <button class="btnVotar" onclick="votarPlato(${plato.id})">Votar</button>
+      </div>
+    `;
+    return producto;
+  }
 
-    if (scrollTop + clientHeight >= scrollHeight - 10) {
+  function cargarMasAlScroll() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
       mostrarMasPlatos();
     }
-  });
-
-  // Inicializar.
-  mostrarMasPlatos();
-
-});
+  }
