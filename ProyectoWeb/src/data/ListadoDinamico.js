@@ -2,7 +2,8 @@
 const contenedor = document.querySelector(".listaProductos");
 let platos = [];
 let indice = 0;
-const cantidadPorCarga = 3;
+const cantidadPorCarga = 4;
+let categoriaActual = null;
 let cargando = false;
 
 // Exportar la funcion votarPlato para que sea global.Permite trabajar con platosemanal.
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function votarPlato(id) {
   // Traer votos guardados.
-  const votos = JSON.parse(localStorage.getItem("votosPlatos")) || {};
+  const votos = JSON.parse(localStorage.getItem("votosPlatos")) || {}; //duda
 
   votos[id] = (votos[id] || 0) + 1;
 
@@ -85,14 +86,13 @@ function cargarTodosLosPlatos() {
     if (cargando) return;
     cargando = true;
     const fragment = document.createDocumentFragment();
-    let categoriaActual = null;
     let tituloCategoria = null;
 
     for (let i = 0; i < cantidadPorCarga && indice < platos.length; i++, indice++) {
       const producto = platos[indice];
       
       // añade el encabezado de la categoría.
-      const categoriaKey = Object.keys(window.datosProductos).find(key => window.datosProductos[key].includes(producto));
+      let categoriaKey = Object.keys(window.datosProductos).find(key => window.datosProductos[key].includes(producto));
       
       if (categoriaKey !== categoriaActual) {
           categoriaActual = categoriaKey;
