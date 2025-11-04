@@ -2,7 +2,8 @@
 const contenedor = document.querySelector(".listaProductos");
 let platos = [];
 let indice = 0;
-const cantidadPorCarga = 3;
+const cantidadPorCarga = 4;
+let categoriaActual = null;
 let cargando = false;
 
 // Exportar la funcion votarPlato para que sea global.Permite trabajar con platosemanal.
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function votarPlato(id) {
   // Traer votos guardados.
-  const votos = JSON.parse(localStorage.getItem("votosPlatos")) || {};
+  const votos = JSON.parse(localStorage.getItem("votosPlatos")) || {}; //duda
 
   votos[id] = (votos[id] || 0) + 1;
 
@@ -83,9 +84,55 @@ function cargarTodosLosPlatos() {
     if (cargando) return;
     cargando = true;
     const fragment = document.createDocumentFragment();
+    let tituloCategoria = null;
 
     for (let i = 0; i < cantidadPorCarga && indice < platos.length; i++, indice++) {
       const producto = platos[indice];
+      
+      // añade el encabezado de la categoría.
+      let categoriaKey = Object.keys(window.datosProductos).find(key => window.datosProductos[key].includes(producto));
+      
+      if (categoriaKey !== categoriaActual) {
+          categoriaActual = categoriaKey;
+          
+          let idAnclaje = "";
+          let titulo = "";
+
+          //Mapea la key del plato a su tipo/titulo.
+          switch(categoriaKey) {
+              case 'productosPasta':
+                  idAnclaje = "linkPasta";
+                  titulo = "Pasta";
+                  break;
+              case 'productosEspecialidad':
+                  idAnclaje = "linkEspecialidad";
+                  titulo = "Especialidades";
+                  break;
+              case 'productosSandwich':
+                  idAnclaje = "linkSandwich";
+                  titulo = "Sandwiches";
+                  break;
+              case 'productosNuggets':
+                  idAnclaje = "linkNuggets";
+                  titulo = "Nuggets";
+                  break;
+              case 'productosEnsalada':
+                  idAnclaje = "linkEnsalada";
+                  titulo = "Ensaladas";
+                  break;
+              default:
+                  titulo = "Otros";
+                  idAnclaje = "";
+          }
+
+          tituloCategoria = document.createElement("h2");
+          tituloCategoria.textContent = `- ${titulo} -`;
+          tituloCategoria.classList.add("tituloCategoria");
+          if (idAnclaje) {
+            tituloCategoria.id = idAnclaje; // Asigna el ID para el scroll.
+          }
+          fragment.appendChild(tituloCategoria);
+      }
       
       const eltoProducto = crearProducto(producto);
       fragment.appendChild(eltoProducto);
