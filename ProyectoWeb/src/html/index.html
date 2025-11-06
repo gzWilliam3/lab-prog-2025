@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/assets/icons/favicon.ico">
+
+    <!-- LINKS DE LA FUENTE DE GOOGLE FONTS -->
+
+    <!-- Fuentes INTER y PLAYFAIR DISPLAY-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">  
+
+    <title>BuenMorfar | Restaurante Gourmet</title>
+  </head>
+
+  <body>
+    <header class="encabezado">
+      <img src="/assets/logo/buenMorfar256.png" alt="Logo de 'Buen Morfar" />
+    </header>
+
+    <!-- INICIO MAIN-->
+    <main>
+      <section class="fondoPagina">
+        <!-- INICIO BARRA NAVEGACION -->
+        <nav class="navContenedor">
+          <ul class="listado">
+            <li href="/">
+              <div class="imagenNav">
+                <img
+                  src="/assets/nav/interior800.png"
+                  alt="Imagen del interior del restaurante"
+                />
+              </div>
+              <a href="/">- Home -</a>
+            </li>
+            <li>
+              <div class="imagenNav">
+                <img
+                  src="/assets/nav/nosotros800.png"
+                  alt="Imagen del equipo de cocina"
+                />
+              </div>
+              <a href="#seccionNosotros">- Nosotros -</a>
+            </li>
+            <li>
+              <div class="imagenNav">
+                <img
+                  src="/assets/nav/productos800.png"
+                  alt="Imagen de una mesa con productos"
+                />
+              </div>
+              <a href="/productos">- Productos -</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- FIN BARRA NAVEGACION -->
+      </section>
+
+      <!-- INICIO SECCION NOSOTROS-->
+      <section id="seccionNosotros">
+        <div class="containerNosotros">
+          <br>
+          <h2 class="titulo">- Nosotros -</h2>
+
+          <p>
+            Somos el Buen Morfar, un restaurante especializado en cocina
+            gourmet. Nos dedicamos a ofrecer una experiencia culinaria unica,
+            pensada para quienes valoran la calidad, la creatividad y el buen
+            sabor en cada plato. Orientado a comensales exigentes, atendemos a
+            locales y hostels de categoria que buscan compartir nuestra
+            propuesta gastronomica.
+          </p>
+        </div>
+
+        <div class="imgMain">
+          <img src="/assets/interior.png" />
+        </div>
+      </section>
+      <!-- FIN SECCION NOSOTROS-->
+
+
+      <!-- INICIO SECCION UBICACION -->
+      <section id="seccionUbicacion">
+        <div class="imgMain">
+          <img src="/assets/esquina.png" />
+        </div>
+        <div class="containerUbicacion">
+          <h2 class="titulo">- Ubicacion -</h2>
+
+          <p>
+            Nos encontramos en la intersección de Avenida del Hambre y Calle Ganas de Comer, en el corazón gastronómico de la ciudad.
+             Un punto de encuentro ideal para disfrutar de la mejor cocina de Buen Morfar en un ambiente cálido y accesible para todos.
+          </p>
+        </div>
+      </section>
+      <!-- FIN SECCION UBICACION -->
+
+
+      <div class="gradienteACaja"></div>
+
+
+      <!-- INICIO SECCION CAJA COMIDAS-->
+      <section id="cajaComidas">
+        <h2 class="titulo">- Delicias para un Buen Morfar -</h2>
+        <div class="containerComidas"></div>
+      </section>
+      <!-- FIN SECCION CAJA COMIDAS-->
+
+
+      <div class="gradienteFooter"></div>
+
+
+    </main>
+    <!-- FIN MAIN-->
+
+    <!-- INICIO DE FOOTER -->
+    <footer class="piePagina">
+      <div class="logoFooter">
+        <img src="/assets/logo/buenMorfar256_blanco.png" alt="Logo en blanco" />
+      </div>
+
+      <ul class="listadoFooter">
+        <li>
+          <a href="/">- Home -</a>
+        </li>
+        <li>
+          <a href="#seccionNosotros">- Nosotros -</a>
+        </li>
+        <li>
+          <a href="#seccionUbicacion">- Ubicacion -</a>
+        </li>
+        <li>
+          <a href="/productos">- Productos -</a>
+        </li>
+      </ul>
+
+      <div class="contactoFooter">
+        <h4>- Diseño y desarrollo -</h4>
+
+        <div class="containerUsers">
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3/lab-prog-2025">Repositorio del Grupo 16</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/francisconunez-PG">Francisco Nuñez Ardanaz</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/tsantiagogonzalez">Tomas Santiago Gonzalez</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3">William Agustin Gonzalez</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FIN DE FOOTER -->
+    <script src="/scripts/cargaProductos.js"></script>
+    <script src="/scripts/platosSemana.js"></script>
+
+  </body>
+</html>

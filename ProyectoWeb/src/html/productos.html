@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/productStyle.css" />
+    <link rel="icon" href="/assets/icons/favicon.ico">
+
+    <!-- LINKS DE LA FUENTE DE GOOGLE FONTS -->
+
+    <!-- Fuentes INTER y PLAYFAIR DISPLAY-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Productos</title>
+  </head>
+
+  <body>
+    <header class="encabezado">
+      <img src="/assets/logo/buenMorfar256.png" alt="Logo de 'Buen Morfar'" />
+    </header>
+
+    <!-- Barra Nav -->
+    <nav class="navContenedor">
+      <ul class="listado">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#seccionNosotros">Nosotros</a></li>
+        <li><a href="/productos">Productos</a></li>
+      </ul>
+    </nav>
+    <!-- Fin Barra Nav -->
+
+    <!-- Inicio MAIN-->
+    <main>
+      <!-- Inicio fondo-->
+      <section class="fondoPagina"></section>
+
+      <!-- Fin fondo -->
+
+      <!-- Inicio navegacion de comidas-->
+      <nav class="navContenedorComidas">
+        <ul class="listado">
+          <li><a href="#" data-categoria="todosProductos">- Todos los Productos -</a></li>
+          <li><a href="#" data-categoria="productosPasta">- Pasta -</a></li>
+          <li><a href="#" data-categoria="productosEspecialidad">- Especialidad -</a></li>
+          <li><a href="#" data-categoria="productosSandwich">- Sandwich -</a></li>
+          <li><a href="#" data-categoria="productosNuggets">- Nuggets -</a></li>
+          <li><a href="#" data-categoria="productosEnsalada">- Ensalada -</a></li>
+          <li>- En Progreso... -</li>
+        </ul>
+        
+      </nav>
+      <!-- Fin navegacion comidas-->
+
+      <!-- Inicio seccion contenedor productos-->
+      <section class="contenedorProductos">
+        <section class="listaProductos">
+      <!-- Los productos se cargan dinámicamente aqui -->
+        </section>
+      </section>
+<!-- Fin seccion contenedor productos-->
+    </main>
+    <!-- Fin MAIN-->
+
+    <div class="gradienteFooter"></div>
+    
+    <!-- INICIO DE FOOTER -->
+    <footer class="piePagina">
+      <div class="logoFooter">
+        <img src="/assets/logo/buenMorfar256_blanco.png" alt="Logo en blanco" />
+      </div>
+
+      <ul class="listadoFooter">
+        <li>
+          <a href="/">- Home -</a>
+        </li>
+        <li>
+          <a href="/#seccionNosotros">- Nosotros -</a>
+        </li>
+        <li>
+          <a href="/#seccionUbicacion">- Ubicacion -</a>
+        </li>
+        <li>
+          <a href="/productos">- Productos -</a>
+        </li>
+      </ul>
+
+      <div class="contactoFooter">
+        <h4>- Diseño y desarrollo -</h4>
+
+        <div class="containerUsers">
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3/lab-prog-2025">Repositorio del Grupo 16</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/francisconunez-PG">Francisco Nuñez Ardanaz</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/tsantiagogonzalez">Tomas Santiago Gonzalez</a>
+          </div>
+          <div class="devUser">
+            <img class="logoGitHub" src="/assets/icons/github.png" alt="Logo de GitHub">
+            <a href="https://github.com/gzWilliam3">William Agustin Gonzalez</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FIN DE FOOTER -->
+    <script src="/scripts/cargaProductos.js"></script>
+    
+  </body>
+</html>
