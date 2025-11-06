@@ -17,7 +17,7 @@ app.get('/productos', (req,res) => {
 });
 
 // ruta personal para el JSON
-app.get('/api/datosProductos', (req,res) => {
+app.get('/api/v1/datosProductos', (req,res) => {
     res.sendFile(__dirname + '/src/data/datosProductos.json');
 });
 
