@@ -1,0 +1,32 @@
+{
+    "productosPasta": [
+      { "id": 1, "nombre": "Pasta con Queso", "categoria":"productosPasta", "descripcion": "Pasta italiana con salsa cremosa de queso parmesano.", "imagen": "../assets/comida/pasta/pastaQueso.jpeg" },
+      { "id": 2, "nombre": "Pasta y Verduras", "categoria":"productosPasta", "descripcion": "Tallarines salteados con vegetales frescos y aceite de oliva.", "imagen": "../assets/comida/pasta/pasta&verduras.jpg" },
+      { "id": 3, "nombre": "Pasta con Albóndigas", "categoria":"productosPasta", "descripcion": "Spaghetti clásico con albóndigas y salsa de tomate casera.", "imagen": "../assets/comida/pasta/pastaAlbondigas.jpeg" },
+      { "id": 4, "nombre": "Fettuccine Alfredo", "categoria":"productosPasta", "descripcion": "Fettuccine en salsa Alfredo cremosa con parmesano y manteca.", "imagen": "../assets/comida/pasta/fettuccineAlfredo.png" },
+      { "id": 5, "nombre": "Ravioles de Ricotta y Espinaca", "categoria":"productosPasta", "descripcion": "Ravioles artesanales servidos con salsa de tomate y albahaca.", "imagen" : "../assets/comida/pasta/raviolesRicotaEspinaca.png" }
+    ],
+    "productosEspecialidad": [
+      { "id": 6, "nombre": "Hamburguesa 'Buen Morfar'", "categoria":"productosEspecialidad", "descripcion": "Carne premium, pan brioche y salsa casera especial.", "imagen": "../assets/comida/especialidad/hamburguesa.jpg" },
+      { "id": 7, "nombre": "Pollo 'A la Morfar' & Papas Rústicas", "categoria":"productosEspecialidad", "descripcion": "Muslo grillado con condimentos secretos y papas rústicas.", "imagen": "../assets/comida/especialidad/polloPapas.jpg" },
+      { "id": 8, "nombre": "Lomo a la Parrilla", "categoria":"productosEspecialidad", "descripcion": "Lomo tierno con chimichurri artesanal y guarnición a elección.", "imagen": "../assets/comida/especialidad/lomoParrilla.png" }
+    ],
+    "productosSandwich": [
+      { "id": 9, "nombre": "Sandwich de Carne BBQ", "categoria":"productosSandwich", "descripcion": "Carne tierna a la barbacoa con cebolla caramelizada.", "imagen": "../assets/comida/sandwich/sandwichCarneBarbacoa.jpg" },
+      { "id": 10, "nombre": "Sandwich de Pollo", "categoria":"productosSandwich", "descripcion": "Pechuga grillada con lechuga, tomate y mayonesa casera.", "imagen": "../assets/comida/sandwich/sandwichPollo.jpg" },
+      { "id": 11, "nombre": "Sandwich de Pollo & Papas", "categoria":"productosSandwich", "descripcion": "Sandwich de pollo acompañado de papas fritas crocantes.", "imagen": "../assets/comida/sandwich/sandwichPolloPapas.jpg" },
+      { "id": 12, "nombre": "Sandwich de Pollo & Queso", "categoria":"productosSandwich", "descripcion": "Sandwich de pollo con queso.", "imagen": "../assets/comida/sandwich/sandwichPolloQueso.jpeg" },
+      { "id": 13, "nombre": "Sandwich de Soja BBQ", "categoria":"productosSandwich", "descripcion": "Versión vegetariana con soja barbacoa y vegetales grillados.", "imagen": "../assets/comida/sandwich/sandwichSojaBarbacoa.jpeg" }
+    ],
+    "productosNuggets": [
+      { "id": 14, "nombre": "Nuggets de Pollo",  "categoria":"productosNuggets", "descripcion": "Crujientes por fuera, tiernos por dentro, con salsa barbacoa.", "imagen": "../assets/comida/nuggets/nuggetsPollo.jpeg" },
+      { "id": 15, "nombre": "Nuggets de Verdura", "categoria":"productosNuggets", "descripcion": "Deliciosos bocados de zanahoria, calabaza y arvejas.", "imagen": "../assets/comida/nuggets/nuggetsVerdura.jpeg" },
+      { "id": 16, "nombre": "Nuggets de Queso", "categoria":"productosNuggets", "descripcion": "Nuggets rellenos de queso fundido, ideales como snack.", "imagen": "../assets/comida/nuggets/nuggetsQueso.png" }
+    ],
+    "productosEnsalada": [
+      { "id": 17, "nombre": "Ensalada Verde", "categoria":"productosEnsalada", "descripcion": "Mix de hojas verdes, pepino y aderezo de limón.", "imagen": "../assets/comida/ensaladas/ensalada2.jpeg" },
+      { "id": 18, "nombre": "Ensalada César", "categoria":"productosEnsalada", "descripcion": "Clásica con pollo grillado, parmesano y crutones.", "imagen": "../assets/comida/ensaladas/ensaladaCesar.png" },
+      { "id": 19, "nombre": "Ensalada Mediterránea", "categoria":"productosEnsalada", "descripcion": "Con tomate, aceitunas, queso feta y aceite de oliva.", "imagen": "../assets/comida/ensaladas/ensaladaMedi.png" },
+      { "id": 20, "nombre": "Ensalada de Champiñones", "categoria":"productosEnsalada", "descripcion": "Champiñones frescos con espinaca y vinagreta balsámica.", "imagen": "../assets/comida/ensaladas/ensalada1.jpeg" }
+    ]
+  }
