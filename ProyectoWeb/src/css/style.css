@@ -44,7 +44,7 @@ p{
 
 /* SECCION IMAGEN FONDO Y LOGO */
 .fondoPagina {
-  width: 1fr;
+  width: 100%;
   height: 512px;
   background-image: url("../assets/fondo.jpg");
   background-size: cover;
@@ -54,19 +54,10 @@ p{
 }
 
 .navContenedor {
-  width: 100%;
   display: flex;
   justify-content: center;
   background-color: transparent; 
 }
-
-.navContenedor {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: transparent; 
-}
-
 
 .navContenedor ul li{
   min-width: 200px;

@@ -83,7 +83,7 @@ html {
   font-size: 40px;
 }
 
-.grillaSubproductos {
+#grillaDePasta, #grillaDeEspecialidad, #grillaDeSandwich, #grillaDeNuggets, #grillaDeEnsalada {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(2, 1fr);
