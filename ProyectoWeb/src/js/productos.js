@@ -1,29 +1,26 @@
-// Rutas de API específicas.
-const ruta_pasta = "/api/productos/pasta";
-const ruta_especialidad = "/api/productos/especialidad";
-const ruta_sandwich = "/api/productos/sandwich";
-const ruta_nuggets = "/api/productos/nuggets";
-const ruta_ensalada = "/api/productos/ensalada";
+//Formato SCREAMING_SNAKE_CASE.
+const RUTA_PASTA = "/api/productos/pasta";
+const RUTA_ESPECIALIDAD = "/api/productos/especialidad";
+const RUTA_SANDWICH = "/api/productos/sandwich";
+const RUTA_NUGGETS = "/api/productos/nuggets";
+const RUTA_ENSALADA = "/api/productos/ensalada";
 
-// Llama a las funciones al cargar la página.
 cargarPasta();
 cargarEspecialidad();
 cargarSandwich();
 cargarNuggets();
 cargarEnsalada();
 
-// Función auxiliar para manejar la lógica de fetch y renderizado.
 function cargarCategoria(urlApi, idContenedor) {
     const contenedor = document.getElementById(idContenedor);
     if (!contenedor) return;
     
-    // Se hace la llamada al endpoint específico.
     fetch(urlApi)
         .then(res => {
             if (!res.ok) {
-                throw new Error(`Error ${res.status}: Falló el endpoint ${urlApi}`);
+                // Esto atrapa un error 404 del servidor si la ruta no existe.
+                throw new Error(`Error ${res.status} al acceder a ${urlApi}`);
             }
-            // El servidor devuelve el array de productos.
             return res.json(); 
         })
         .then(arrProductos => {
@@ -52,28 +49,27 @@ function cargarCategoria(urlApi, idContenedor) {
         })
         .catch(error => {
             console.error(`Error al cargar ${idContenedor}:`, error);
-            contenedor.innerHTML = `<p>Error: No se pudo cargar esta categoría. (${error.message})</p>`;
+            contenedor.innerHTML = `<p>Error al cargar el menú: No se pudo conectar con el servidor o la ruta falló.</p>`;
         });
 }
 
 
-// Implementaciones usando la función auxiliar:
 function cargarPasta() {
-    cargarCategoria(ruta_pasta, "grillaDePasta");
+    cargarCategoria(RUTA_PASTA, "grillaDePasta");
 }
 
 function cargarEspecialidad() {
-    cargarCategoria(ruta_especialidad, "grillaDeEspecialidad");
+    cargarCategoria(RUTA_ESPECIALIDAD, "grillaDeEspecialidad");
 }
 
 function cargarSandwich() {
-    cargarCategoria(ruta_sandwich, "grillaDeSandwich");
+    cargarCategoria(RUTA_SANDWICH, "grillaDeSandwich");
 }
 
 function cargarNuggets() {
-    cargarCategoria(ruta_nuggets, "grillaDeNuggets");
+    cargarCategoria(RUTA_NUGGETS, "grillaDeNuggets");
 }
 
 function cargarEnsalada() {
-    cargarCategoria(ruta_ensalada, "grillaDeEnsalada");
+    cargarCategoria(RUTA_ENSALADA, "grillaDeEnsalada");
 }
