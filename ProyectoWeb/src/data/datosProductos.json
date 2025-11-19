@@ -24,9 +24,9 @@
       { "id": 16, "nombre": "Nuggets de Queso", "categoria":"productosNuggets", "descripcion": "Nuggets rellenos de queso fundido, ideales como snack.", "imagen": "../assets/comida/nuggets/nuggetsQueso.png" }
     ],
     "productosEnsalada": [
-      { "id": 17, "nombre": "Ensalada Verde", "categoria":"productosEnsalada", "descripcion": "Mix de hojas verdes, pepino y aderezo de limón.", "imagen": "../assets/comida/ensaladas/ensalada2.jpeg" },
+      { "id": 17, "nombre": "Ensalada Verde", "categoria":"productosEnsalada", "descripcion": "Mix de hojas verdes, pepino y aderezo de limón.", "imagen": "../assets/comida/ensaladas/ensaladaVerde.jpeg" },
       { "id": 18, "nombre": "Ensalada César", "categoria":"productosEnsalada", "descripcion": "Clásica con pollo grillado, parmesano y crutones.", "imagen": "../assets/comida/ensaladas/ensaladaCesar.png" },
       { "id": 19, "nombre": "Ensalada Mediterránea", "categoria":"productosEnsalada", "descripcion": "Con tomate, aceitunas, queso feta y aceite de oliva.", "imagen": "../assets/comida/ensaladas/ensaladaMedi.png" },
-      { "id": 20, "nombre": "Ensalada de Champiñones", "categoria":"productosEnsalada", "descripcion": "Champiñones frescos con espinaca y vinagreta balsámica.", "imagen": "../assets/comida/ensaladas/ensalada1.jpeg" }
+      { "id": 20, "nombre": "Ensalada de Champiñones", "categoria":"productosEnsalada", "descripcion": "Champiñones frescos con espinaca y vinagreta balsámica.", "imagen": "../assets/comida/ensaladas/ensaladaChampi.jpeg" }
     ]
   }
