@@ -299,7 +299,7 @@ footer{
 
 }
 
-.piePagina {
+#piePagina {
   background-color: #212830;
   height: auto;
   padding-bottom: 30px;
@@ -309,11 +309,11 @@ footer{
   justify-content: space-around ;
 }
 
-.piePagina h4, a{
+#piePagina h4, a{
   color: white;
 }
 
-.piePagina a {
+#piePagina a {
   display: block;
   font-size: 10px;
   text-decoration: none;

@@ -15,6 +15,7 @@ let datosVotos = {};
 // Permite al servidor leer el cuerpo de las peticiones POST en formato JSON.
 app.use(express.json()); 
 app.use(express.static(path.join(__dirname, 'src')));
+app.use('/assets',express.static(path.join(__dirname, 'src', 'assets')));
 
 function cargarDatos(req, res, next) {
     // Carga los datos del menú y votos.
@@ -43,6 +44,10 @@ app.get('/', (req, res) => {
 
 app.get('/productos', (req,res) => {
     res.sendFile(path.join(__dirname, 'src', 'html', 'productos.html'));
+});
+
+app.get('/reviews', (req,res) => {
+    res.sendFile(path.join(__dirname, 'src', 'html', 'reviews.html'));
 });
 
 app.use('/api', cargarDatos);
