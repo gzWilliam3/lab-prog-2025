@@ -3,11 +3,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     // obtencion de votos.
-    const votosResponse = await fetch("/api/votos"); 
+    const votosResponse = await fetch("/api/votos");
     if (!votosResponse.ok) {
       throw new Error("No se pudieron obtener los votos del servidor.");
     }
-    const votos = await votosResponse.json(); 
+    const votos = await votosResponse.json();
     
     // Se convierte el objeto de votos a un array para poder ordenarlo.
     const listaPlatos = Object.entries(votos);

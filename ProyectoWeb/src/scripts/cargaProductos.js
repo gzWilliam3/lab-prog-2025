@@ -10,8 +10,8 @@ window.votarPlato = votarPlato; // Hace la función global para el onclick.
 // Inicializo y cargo datos del json.
 document.addEventListener("DOMContentLoaded", () => {
     if(contenedor){
-        // Cargo datos de la API 
-        fetch("/api/datosProductos") 
+        // Cargo datos de la API
+        fetch("/api/datosProductos")
             .then(res => res.json())
             .then(datos => {
                 // Guardo datos en variable
@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Fc previa al filtrado dw productos
                 configurarMenuNav();
 
-                // Muestro todos los productos por defecto al entrar pagina
+                // Muestro todos los productos por defecto al entrar pagina.
                 filtrarYMostrar("todosProductos");
 
-                // Listener de scroll
+                // Listener de scroll.
                 window.addEventListener("scroll", cargarMasAlScroll);
             })
             .catch(error => {
@@ -70,7 +70,7 @@ function cargarProductos() {
     if (indice >= productos.length) return; // Por si no hay mas platos que cargar.
 
     cargando = true;
-    const fragment = document.createDocumentFragment();
+    const fragmento = document.createDocumentFragment();
 
     // define cuantos cargar: la cantidadPorCarga o los que queden.
     const fin = Math.min(indice + cantidadPorCarga, productos.length);
@@ -80,12 +80,12 @@ function cargarProductos() {
         const producto = productos[i];
         const eltoProducto = crearProducto(producto);
 
-        fragment.appendChild(eltoProducto);
+        fragmento.appendChild(eltoProducto);
         // transicion
         setTimeout(() => eltoProducto.classList.add("visible"), 100 * (i - indice));
     }
 
-    contenedor.appendChild(fragment);
+    contenedor.appendChild(fragmento);
     
     // actualizo indice para prox carga.
     indice = fin;
@@ -127,7 +127,7 @@ function cargarMasAlScroll() {
 // Registra el voto en el servidor .
 async function votarPlato(id) {
     try {
-        // RUTA: /api/votos.
+        
         const response = await fetch('/api/votos', {
             method: 'POST',
             headers: {

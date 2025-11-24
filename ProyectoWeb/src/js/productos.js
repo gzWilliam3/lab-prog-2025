@@ -21,7 +21,7 @@ function cargarCategoria(urlApi, idContenedor) {
                 // Esto atrapa un error 404 del servidor si la ruta no existe.
                 throw new Error(`Error ${res.status} al acceder a ${urlApi}`);
             }
-            return res.json(); 
+            return res.json();
         })
         .then(arrProductos => {
             contenedor.innerHTML = "";

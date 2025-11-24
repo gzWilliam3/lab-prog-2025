@@ -3,9 +3,9 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = 3000; 
+const PORT = 3000;
 
-// --- Configuracion de las rutas de los archivos ---
+// Configuracion de las rutas de los archivos.
 const dataPath = path.join(__dirname, 'src', 'data', 'datosProductos.json');
 const votosPath = path.join(__dirname, 'src', 'data', 'votos.json');
 
@@ -34,7 +34,7 @@ function cargarDatos(req, res, next) {
     next();
 }
 
-// Rutas HTML
+// Rutas HTML.
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', 'html', 'index.html'));
 });
@@ -46,14 +46,14 @@ app.get('/productos', (req,res) => {
 app.use('/api', cargarDatos);
 
 
-// --- ENDPOINTS RESTFUL (GET) ---
+// ENDPOINTS GET
 
-// 1. OBtiene TODOS los datos del menú.
+// OBtiene TODOS los datos del menú.
 app.get('/api/datosProductos', (req, res) => {
     res.json(datosComida);
 });
 
-// 2. Obtiene los productos por categoría.
+// Obtiene los productos por categoría.
 app.get('/api/productos/:categoria', (req, res) => {
     const categoriaKey = req.params.categoria;
     const keyConPrefijo = `productos${categoriaKey.charAt(0).toUpperCase() + categoriaKey.slice(1)}`;
@@ -65,15 +65,15 @@ app.get('/api/productos/:categoria', (req, res) => {
     }
 });
 
-// OBTiene el estado de los votos.
+// Obtiene el estado de los votos.
 app.get('/api/votos', (req, res) => {
     res.json(datosVotos);
 });
 
 
-// --- endpoints (POST) ---
+// endpoints POST
 
-//  Recibe y guardar un voto.
+// Recibe y guardar un voto.
 app.post('/api/votos', (req, res) => {
     const { platoId } = req.body;
     
