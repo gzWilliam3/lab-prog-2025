@@ -184,7 +184,7 @@ async function cargarComentarios(id) {
     const res = await fetch(`/api/comentarios/${id}`);
     const lista = await res.json();
 
-    // Importante: pintar en bloque, evita múltiples repaints.
+
     listaComentariosDiv.innerHTML =
         lista.length === 0
             ? "<em>No hay comentarios aún.</em>"
