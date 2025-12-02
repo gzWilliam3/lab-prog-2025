@@ -1,12 +1,15 @@
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // OBTIENE los votos del servidor.
-    const votosResponse = await fetch("/api/getVotos");
+    // obtencion de votos.
+    const votosResponse = await fetch("/api/votos");
     if (!votosResponse.ok) {
       throw new Error("No se pudieron obtener los votos del servidor.");
     }
-    const votos = await votosResponse.json(); 
+    const votos = await votosResponse.json();
     
+    // Se convierte el objeto de votos a un array para poder ordenarlo.
     const listaPlatos = Object.entries(votos);
 
     if (listaPlatos.length === 0) {
@@ -14,26 +17,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    // Seleciona los 5 mejores platos.
+    //  Tira el top 5 de mejores platos.
     const topPlatos = listaPlatos.sort((a, b) => b[1] - a[1]).slice(0, 5);
 
-    // OBTIENE detalles de los platos. 
-    const datosResponse = await fetch("/api/getDatosProductos");
+    // Obtiene los detalles de los platos(votos nomas, supongo).
+    const datosResponse = await fetch("/api/datosProductos");
     if (!datosResponse.ok) {
       throw new Error("No se pudieron obtener los datos de los productos.");
     }
     const datos = await datosResponse.json();
     
+    // Une todos los productos de las diferentes categorías en un solo array.
     const todosPlatos = Object.values(datos).flat();
     const contenedor = document.querySelector(".containerComidas");
 
     if (!contenedor) return;
 
-    contenedor.innerHTML = ""; 
+    contenedor.innerHTML = ""; // limpiar antes de mostrar.
 
-    // MUESTRA los platos en el ranking (Index.html).
+    // Muestra los platos rankeados.
     topPlatos.forEach(([id, votos], index) => {
-      const plato = todosPlatos.find((p) => p.id == id); 
+      // Buscar el plato completo usando su ID.
+      const plato = todosPlatos.find((p) => p.id == id);
       if (!plato) return;
 
       const elto = document.createElement("div");
@@ -41,8 +46,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       elto.innerHTML = `
         <div class="platoRanking">
-          <img src="${plato.imagen || "/assets/default.jpg"}" 
-              alt="Imagen de ${plato.nombre || "Plato destacado"}" 
+          <img src="${plato.imagen || "/assets/default.jpg"}"
+              alt="Imagen de ${plato.nombre || "Plato destacado"}"
               title="${plato.nombre || "Plato destacado"}: ${votos} votos">
 
           <div class="overlayInfo">
