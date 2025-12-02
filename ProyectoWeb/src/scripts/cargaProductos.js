@@ -1,158 +1,178 @@
-// Variables globales.
+// Variables globales
 const contenedor = document.querySelector(".listaProductos");
 let datosCompletos = {};
-let productos = [];
+let productos = []; // array o subarreglo que se va a mostrar.
 let indice = 0;
 const cantidadPorCarga = 2;
 let cargando = false;
+window.votarPlato = votarPlato; // Hace la función global para el onclick.
 
-window.votarPlato = votarPlato; // Necesario porque el Onclick.
-
-
-// Inicializa sistema.
+// Inicializo y cargo datos del json.
 document.addEventListener("DOMContentLoaded", () => {
-    if (!contenedor) return;
+    if(contenedor){
+        // Cargo datos de la API
+        fetch("/api/datosProductos")
+            .then(res => res.json())
+            .then(datos => {
+                // Guardo datos en variable
+                datosCompletos = datos;
 
-    fetch("/api/datosProductos")
-        .then(res => res.json())
-        .then(datos => {
-            datosCompletos = datos;
-            configurarMenuNav();
-            filtrarYMostrar("todosProductos");
-            window.addEventListener("scroll", cargarMasAlScroll);
-        })
-        .catch(err => console.error("Error al cargar datos:", err));
-});
+                // Fc previa al filtrado dw productos
+                configurarMenuNav();
 
-// Configura menú de categorías.
-function configurarMenuNav() {
-    const items = document.querySelectorAll(".navContenedorComidas .listado a");
+                // Muestro todos los productos por defecto al entrar pagina.
+                filtrarYMostrar("todosProductos");
 
-    items.forEach(el => {
-        el.addEventListener("click", e => {
-            e.preventDefault();
-            filtrarYMostrar(el.dataset.categoria);
+                // Listener de scroll.
+                window.addEventListener("scroll", cargarMasAlScroll);
+            })
+            .catch(error => {
+                console.error("Error al cargar el JSON: ", error);
+            });
+    }
+})
+
+// funcion de filtrado.
+function configurarMenuNav(){
+    const elementosMenuNav = document.querySelectorAll(".navContenedorComidas .listado a");
+
+    // segun en que boton del menu se haga click, se asigna categoria.
+    elementosMenuNav.forEach(elto => {
+        elto.addEventListener("click", e => {
+            e.preventDefault(); // Para que el enlace no recargue la página.
+            const categoria = elto.dataset.categoria; // "todosProductos", "productosPasta", etc.
+            
+            // Llama a la funcion principal de filtrado.
+            filtrarYMostrar(categoria);
         });
     });
 }
 
-// Filtra productos.
-function filtrarYMostrar(categoria) {
-    let lista = [];
-
-    if (categoria === "todosProductos") {
-        //el flat combina todas las categorías.
-        lista = Object.values(datosCompletos).flat();
-    } else {
-        lista = datosCompletos[categoria] || [];
-    }
-
-    productos = lista;
-    contenedor.innerHTML = "";
+function filtrarYMostrar(categoria){
+    contenedor.innerHTML = ""; // reinicio contenedor.
     indice = 0;
     cargando = false;
 
-    return cargarProductos();
-}
-
-// Carga productos en tandas (en cantidadPorCarga).
-function cargarProductos() {
-    let puede = true;
-
-    if (cargando) puede = false;
-    if (indice >= productos.length) puede = false;
-
-    if (!puede){
-
-        cargando = true;
-        const fragmento = document.createDocumentFragment();
-        const fin = Math.min(indice + cantidadPorCarga, productos.length);
-
-        // Se usa un fragmento para evitar reflow múltiples.
-        for (let i = indice; i < fin; i++) {
-            const nodo = crearProducto(productos[i]);
-            fragmento.appendChild(nodo);
-
-            // Delay de animación
-            setTimeout(() => nodo.classList.add("visible"), 100 * (i - indice));
-        }
-
-        contenedor.appendChild(fragmento);
-        indice = fin;
-        cargando = false;
+    // condicional que asigna un subarreglo segun la categoria que ingreso como parametro.
+    if(categoria === "todosProductos"){
+        // Object.values().flat() junta todos los arrays de productos en uno solo.
+        productos = Object.values(datosCompletos).flat();
     }
-    return puede;
+    else{
+        productos = datosCompletos[categoria] || [];
+    }
+
+    cargarProductos();
 }
 
-// Crea la tarjeta visual de un producto.
-function crearProducto(plato) {
-    const div = document.createElement("div");
-    div.classList.add("producto");
+function cargarProductos() {
+    if (cargando) return; // Evita cargas multiples si ya esta cargando.
+    if (indice >= productos.length) return; // Por si no hay mas platos que cargar.
 
-    div.innerHTML = `
+    cargando = true;
+    const fragmento = document.createDocumentFragment();
+
+    // define cuantos cargar: la cantidadPorCarga o los que queden.
+    const fin = Math.min(indice + cantidadPorCarga, productos.length);
+
+    // bucle que crea el objeto visual de la pagina para cada producto de
+    for (let i = indice; i < fin; i++) {
+        const producto = productos[i];
+        const eltoProducto = crearProducto(producto);
+
+        fragmento.appendChild(eltoProducto);
+        // transicion
+        setTimeout(() => eltoProducto.classList.add("visible"), 100 * (i - indice));
+    }
+
+    contenedor.appendChild(fragmento);
+    
+    // actualizo indice para prox carga.
+    indice = fin;
+    cargando = false;
+}
+
+// Crea la estructura HTML de un producto.
+function crearProducto(plato) {
+    const producto = document.createElement("div");
+    producto.classList.add("producto");
+
+    producto.innerHTML = `
         <div class="contenedorFotoProducto">
             <img class="fotoProducto" src="${plato.imagen}" alt="Imagen de ${plato.nombre}">
         </div>
-
         <div class="infoProducto">
             <h3>${plato.nombre}</h3>
             <p>${plato.descripcion}</p>
 
             <button class="btnVotar" data-id="${plato.id}">Votar</button>
+
+            
             <button class="btnComentarios" data-id="${plato.id}">Comentarios</button>
         </div>
     `;
 
-    div.querySelector(".btnVotar").addEventListener("click", () => votarPlato(plato.id));
-    div.querySelector(".btnComentarios").addEventListener("click", () => abrirModalComentarios(plato.id));
+    // Votar.
+    const btnVotar = producto.querySelector('.btnVotar');
+    btnVotar.addEventListener('click', () => votarPlato(plato.id));
 
-    return div;
+    // Comentarios.
+    const btnComentarios = producto.querySelector('.btnComentarios');
+    btnComentarios.addEventListener('click', () => abrirModalComentarios(plato.id));
+
+    return producto;
 }
 
-// Scroll infinito.
+
 function cargarMasAlScroll() {
-    const cercaDelFinal =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 500;
-
-    if (cercaDelFinal) cargarProductos();
-
-    return true;
+    // Si el usuario está 500px antes de terminar la página.
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+        cargarProductos();
+    }
 }
 
-// Maneja votos.
-async function votarPlato(id) {
-    let mensaje = "Error al registrar el voto.";
 
+// Registra el voto en el servidor .
+async function votarPlato(id) {
     try {
-        const res = await fetch("/api/votos", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ platoId: id })
+        
+        const response = await fetch('/api/votos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ platoId: id }),
         });
 
-        const data = await res.json();
-        mensaje = data.mensaje || mensaje;
-    } catch (e) {
-        console.error("Error votando:", e);
+        const data = await response.json();
+
+        if (response.ok) {
+            mostrarMensajeVoto(data.mensaje);
+        } else {
+            console.error("Error al votar:", data.mensaje);
+            mostrarMensajeVoto("Error al registrar el voto.");
+        }
+
+    } catch (error) {
+        console.error("Error de red al votar:", error);
+        mostrarMensajeVoto("Error de conexión con el servidor.");
     }
-
-    mostrarMensajeVoto(mensaje);
-    return true;
 }
 
-// Muestra confirmación de voto.
-function mostrarMensajeVoto(texto) {
-    const div = document.createElement("div");
-    div.classList.add("mensajeVoto");
-    div.textContent = texto;
+// Muestra una notificación temporal al votar.
+function mostrarMensajeVoto(mensaje) {
+    const mensajeDiv = document.createElement('div');
+    mensajeDiv.classList.add('mensajeVoto');
+    mensajeDiv.textContent = mensaje;
+    document.body.appendChild(mensajeDiv);
 
-    document.body.appendChild(div);
-    setTimeout(() => div.remove(), 2000);
-
-    return true;
+    setTimeout(() => {
+        mensajeDiv.remove();
+    }, 2000);
 }
 
-// Elementos del modal(Formato Comentario).
+// ==================== MODAL DE COMENTARIOS ==================== //
+
 const modal = document.getElementById("modalComentarios");
 const cerrarModal = document.querySelector(".cerrarModal");
 const listaComentariosDiv = document.getElementById("listaComentarios");
@@ -162,51 +182,50 @@ const btnEnviarComentario = document.getElementById("btnEnviarComentario");
 
 let comentarioProductoActual = null;
 
-// Abre los comentarios.
-function abrirModalComentarios(id) {
-    comentarioProductoActual = id;
+// Abrir modal
+function abrirModalComentarios(idProducto) {
+    comentarioProductoActual = idProducto;
     modal.classList.remove("hidden");
-    cargarComentarios(id);
-    return true;
+    cargarComentarios(idProducto);
 }
 
-// Cierra los comentarios.
-cerrarModal.addEventListener("click", () => modal.classList.add("hidden"));
+// Cerrar modal
+cerrarModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
 
-modal.addEventListener("click", e => {
+// Cerrar|clic => afuera
+modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.classList.add("hidden");
 });
 
-// Carga comentarios del producto.
+// Carga comentarios.
 async function cargarComentarios(id) {
     listaComentariosDiv.innerHTML = "Cargando...";
 
     const res = await fetch(`/api/comentarios/${id}`);
-    const lista = await res.json();
+    const comentarios = await res.json();
 
+    if (comentarios.length === 0) {
+        listaComentariosDiv.innerHTML = `<em>No hay comentarios aún.</em>`;
+        return;
+    }
 
-    listaComentariosDiv.innerHTML =
-        lista.length === 0
-            ? "<em>No hay comentarios aún.</em>"
-            : lista
-                .map(c => `
-                    <div>
-                        <strong>${c.nombre}</strong><br>
-                        ${c.comentario}<br>
-                        <small>${new Date(c.fecha).toLocaleString()}</small>
-                    </div>
-                `)
-                .join("");
-
-    return true;
+    listaComentariosDiv.innerHTML = comentarios.map(c => `
+        <div>
+            <strong>${c.nombre}</strong><br>
+            ${c.comentario}<br>
+            <small>${new Date(c.fecha).toLocaleString()}</small>
+        </div>
+    `).join("");
 }
 
-// Envia Comentario.
+// Envia comentario.
 btnEnviarComentario.addEventListener("click", async () => {
     const nombre = nombreEntrada.value.trim();
-    const texto = comentarioEntrada.value.trim();
+    const comentario = comentarioEntrada.value.trim();
 
-    if (!nombre || !texto) {
+    if (!nombre || !comentario) {
         alert("Completa todos los campos");
         return;
     }
@@ -214,10 +233,12 @@ btnEnviarComentario.addEventListener("click", async () => {
     await fetch(`/api/comentarios/${comentarioProductoActual}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, comentario: texto })
+        body: JSON.stringify({ nombre, comentario })
     });
 
+    nombreEntrada.value = "";
     comentarioEntrada.value = "";
+
     cargarComentarios(comentarioProductoActual);
 });
 
