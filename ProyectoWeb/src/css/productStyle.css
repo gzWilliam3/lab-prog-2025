@@ -1,3 +1,5 @@
+/* index.html */
+
 body {
   margin: 0;
   padding: 0;
@@ -16,7 +18,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* SECCION DEL NAV */
+
+/* Navegacion */
 .listado {
   display: flex;
   justify-content: center;
@@ -25,7 +28,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  box-shadow: 1px 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .listado a {
@@ -33,126 +36,121 @@ html {
   color: black;
   font-size: 16px;
   text-decoration: none;
-  padding: 30px;
+  padding: 30px 25px;
 }
 
 .listado a:hover {
   border-bottom: 2px solid black;
-  background-color: lightgray;
+  background-color: #f1f1f1;
 }
 
-/* FIN DEL SECCION DEL NAV */
 
-/* INICIO SECCION FONDO */
+/* Fondo */
 .fondoPagina {
-  width: 1fr;
-  height: 512px;
+  width: 100%;
+  height: 350px;
   background-image: url("../assets/imagenFondoProductos.jpg");
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* FIN SECCION FONDO */
 
-/* INICIO NAV DE COMIDAS */
+/* Navegacion en Categorias */
 .navContenedorComidas {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
 
-/* FIN NAV DE COMIDAS */
+.navContenedorComidas .listado a {
+  font-size: 18px;
+  padding: 15px 20px;
+}
 
-/* INICIO SECCION GRILLA */
+
+/* Lista de Productos(el grid) */
 .listaProductos {
   display: grid;
-  padding: 50px;
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 40px;
+  gap: 35px;
+  transition: all 0.3s ease;
 }
 
-.listaSubproductos {
-  /* border: 1px solid black; /*Borrar despues */
-  /* border-radius: 30px; */
-  padding: 20px;
-}
-
-.listaSubproductos h2{
-  font-size: 40px;
-}
-
-#grillaDePasta, #grillaDeEspecialidad, #grillaDeSandwich, #grillaDeNuggets, #grillaDeEnsalada {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.producto:hover {
-  border: 1px solid black;
-  transform: scale(1.05);
-  background-color: #eee;
-}
-
+/* Tarjeta del Producto */
 .producto {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  /* border: 1px solid black; Borrar despues */
-  gap: 30px;
-  border-radius: 30px;
-  height: 200px;
-  background-color: #ffffff;
-  padding: 10px;
-  transition: transform 0.3s;
-}
-
-.textoProducto {
-  padding-left: 15px;
-}
-
-.nombreProducto {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.descripcionProducto {
-  font-size: 15px;
-  white-space: wrap;
-  text-overflow: ellipsis; /* checkear porque no funciona cuando achico pantalla /*/
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  font-family: "Inter";
+  padding-bottom: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+.producto.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Imagen del Producto */
 .contenedorFotoProducto {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
 }
 
 .fotoProducto {
-  width: 450px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 30px;
 }
 
-.gradienteFooter{
-  height:150px;
-  background: #E1E3E8;
-  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
+
+/* Info del Producto */
+.infoProducto {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* votacion */
+.infoProducto h3 {
+  font-size: 20px;
+  margin: 0;
+  font-family: "Playfair Display";
+}
+
+.infoProducto p {
+  font-size: 14px;
+  margin: 0;
+  font-family: "Inter";
+  color: #444;
+}
+
+
+/* Votaciòn */
 .btnVotar {
+  margin-top: auto;
   background-color: #373d4c;
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "Inter";
 }
 
 .btnVotar:hover {
@@ -167,17 +165,94 @@ html {
   background: #000;
   color: #fff;
   font-family: "Inter";
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 10px;
   opacity: 0.9;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 
-/* INICIO FOOTER */
-footer{
-  font-family: "Inter";
+/* Comentarios */
+.modalComentarios {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+.modalContenido {
+    width: 500px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-family: "Inter";
+}
+
+.hidden {
+    display: none;
+}
+
+.cerrarModal {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#listaComentarios {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#listaComentarios div {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+#listaComentarios div:last-child {
+    border-bottom: none;
+}
+
+#nombreComentario,
+#textoComentario {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+#btnEnviarComentario {
+    width: 100%;
+    padding: 10px;
+    background: #373d4c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+/* Gradiente */
+.gradienteFooter {
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);
+}
+
+
+/* Footer */
+footer {
+  font-family: "Inter";
 }
 
 .piePagina {
@@ -187,10 +262,10 @@ footer{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around ;
+  justify-content: space-around;
 }
 
-.piePagina h4, a{
+.piePagina h4, a {
   color: white;
 }
 
@@ -202,55 +277,46 @@ footer{
 }
 
 .logoFooter {
-	width: 192px;
-	height: 192px;
+  width: 192px;
+  height: 192px;
 }
 
-.logoFooter img{
-	width: 100%;
-	height: 100%;
-	display: block;
-	object-fit: cover;
+.logoFooter img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .listadoFooter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.contactoFooter{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  border-radius: 30px;
-	width: auto;
-	background-color: #373d4c;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
-.containerUsers{
+.contactoFooter {
+  background-color: #373d4c;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.containerUsers {
   display: grid;
   grid-template-columns: auto auto;
-  padding-bottom: 20px;
+  gap: 10px;
 }
 
-.devUser{
+.devUser {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 250px;
+  gap: 5px;
 }
 
-.logoGitHub{
+.logoGitHub {
   width: 20px;
   height: 20px;
 }
 
-
-/* FIN FOOTER */ 

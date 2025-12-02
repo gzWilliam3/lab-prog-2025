@@ -8,9 +8,11 @@ const PORT = 3000;
 // Configuracion de las rutas de los archivos.
 const dataPath = path.join(__dirname, 'src', 'data', 'datosProductos.json');
 const votosPath = path.join(__dirname, 'src', 'data', 'votos.json');
+const comentariosPath = path.join(__dirname, 'src', 'data', 'comentarios.json');
 
 let datosComida = {};
 let datosVotos = {};
+let datosComentarios = {};
 
 app.use(express.json()); // Necesario para leer el cuerpo de la petición POST.
 app.use(express.static(path.join(__dirname, 'src'))); // Sirve para mapear los archivos estáticos.
@@ -31,8 +33,18 @@ function cargarDatos(req, res, next) {
             datosVotos = {};
         }
     }
+    if (Object.keys(datosComentarios).length === 0) {
+    try {
+        datosComentarios = JSON.parse(fs.readFileSync(comentariosPath, 'utf8'));
+    } catch (e) {
+        datosComentarios = {};
+    }
+}
+
     next();
 }
+
+app.use('/api', cargarDatos);
 
 // Rutas HTML.
 app.get('/', (req, res) => {
@@ -44,7 +56,6 @@ app.get('/productos', (req,res) => {
 });
 
 app.use('/api', cargarDatos);
-
 
 // ENDPOINTS GET
 
@@ -70,6 +81,16 @@ app.get('/api/votos', (req, res) => {
     res.json(datosVotos);
 });
 
+app.get('/api/comentarios/:id', (req, res) => {
+    const id = req.params.id;
+
+    if (!datosComentarios[id]) {
+        return res.json([]);
+    }
+
+    res.json(datosComentarios[id]);
+});
+
 
 // endpoints POST
 
@@ -90,6 +111,35 @@ app.post('/api/votos', (req, res) => {
     } catch (error) {
         console.error("Error al guardar votos.json:", error);
         res.status(500).json({ mensaje: 'Error interno del servidor al guardar el voto.' });
+    }
+});
+
+app.post('/api/comentarios/:id', (req, res) => {
+    const id = req.params.id;
+    const { nombre, comentario } = req.body;
+
+    if (!nombre || !comentario) {
+        return res.status(400).json({ mensaje: "Faltan campos obligatorios." });
+    }
+
+    const nuevoComentario = {
+        nombre,
+        comentario,
+        fecha: new Date().toISOString()
+    };
+
+    if (!datosComentarios[id]) {
+        datosComentarios[id] = [];
+    }
+
+    datosComentarios[id].push(nuevoComentario);
+
+    try {
+        fs.writeFileSync(comentariosPath, JSON.stringify(datosComentarios, null, 2));
+        res.status(200).json({ mensaje: "Comentario guardado correctamente." });
+    } catch (error) {
+        console.error("Error al guardar comentarios:", error);
+        res.status(500).json({ mensaje: "Error interno al guardar comentario." });
     }
 });
 

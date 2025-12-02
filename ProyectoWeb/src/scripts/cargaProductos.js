@@ -104,17 +104,25 @@ function crearProducto(plato) {
         <div class="infoProducto">
             <h3>${plato.nombre}</h3>
             <p>${plato.descripcion}</p>
+
             <button class="btnVotar" data-id="${plato.id}">Votar</button>
+
+            <!-- NUEVO: botón de comentarios -->
+            <button class="btnComentarios" data-id="${plato.id}">Comentarios</button>
         </div>
     `;
 
+    // Votar.
     const btnVotar = producto.querySelector('.btnVotar');
-    btnVotar.addEventListener('click', () => {
-        votarPlato(plato.id);
-    });
+    btnVotar.addEventListener('click', () => votarPlato(plato.id));
+
+    // Comentarios.
+    const btnComentarios = producto.querySelector('.btnComentarios');
+    btnComentarios.addEventListener('click', () => abrirModalComentarios(plato.id));
 
     return producto;
 }
+
 
 function cargarMasAlScroll() {
     // Si el usuario está 500px antes de terminar la página.
@@ -162,3 +170,75 @@ function mostrarMensajeVoto(mensaje) {
         mensajeDiv.remove();
     }, 2000);
 }
+
+// ==================== MODAL DE COMENTARIOS ==================== //
+
+const modal = document.getElementById("modalComentarios");
+const cerrarModal = document.querySelector(".cerrarModal");
+const listaComentariosDiv = document.getElementById("listaComentarios");
+const nombreEntrada = document.getElementById("nombreComentario");
+const comentarioEntrada = document.getElementById("textoComentario");
+const btnEnviarComentario = document.getElementById("btnEnviarComentario");
+
+let comentarioProductoActual = null;
+
+// Abrir modal
+function abrirModalComentarios(idProducto) {
+    comentarioProductoActual = idProducto;
+    modal.classList.remove("hidden");
+    cargarComentarios(idProducto);
+}
+
+// Cerrar modal
+cerrarModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
+
+// Cerrar|clic => afuera
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.add("hidden");
+});
+
+// Carga comentarios.
+async function cargarComentarios(id) {
+    listaComentariosDiv.innerHTML = "Cargando...";
+
+    const res = await fetch(`/api/comentarios/${id}`);
+    const comentarios = await res.json();
+
+    if (comentarios.length === 0) {
+        listaComentariosDiv.innerHTML = `<em>No hay comentarios aún.</em>`;
+        return;
+    }
+
+    listaComentariosDiv.innerHTML = comentarios.map(c => `
+        <div>
+            <strong>${c.nombre}</strong><br>
+            ${c.comentario}<br>
+            <small>${new Date(c.fecha).toLocaleString()}</small>
+        </div>
+    `).join("");
+}
+
+// Envia comentario.
+btnEnviarComentario.addEventListener("click", async () => {
+    const nombre = nombreEntrada.value.trim();
+    const comentario = comentarioEntrada.value.trim();
+
+    if (!nombre || !comentario) {
+        alert("Completa todos los campos");
+        return;
+    }
+
+    await fetch(`/api/comentarios/${comentarioProductoActual}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, comentario })
+    });
+
+    nombreEntrada.value = "";
+    comentarioEntrada.value = "";
+
+    cargarComentarios(comentarioProductoActual);
+});
+
