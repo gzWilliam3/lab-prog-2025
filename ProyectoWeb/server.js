@@ -95,53 +95,64 @@ app.get('/api/comentarios/:id', (req, res) => {
 // endpoints POST
 
 // Recibe y guardar un voto.
-app.post('/api/votos', (req, res) => {
+app.post('/api/votos', async (req, res) => {
     const { platoId } = req.body;
-    
+
     if (!platoId) {
-        return res.status(400).json({ mensaje: 'ID del plato requerido.' });
+        return res.status(400).json({ mensaje: "ID del plato requerido." });
     }
 
     const idStr = String(platoId);
     datosVotos[idStr] = (datosVotos[idStr] || 0) + 1;
 
     try {
-        fs.writeFileSync(votosPath, JSON.stringify(datosVotos, null, 2));
-        res.status(200).json({ mensaje: `Voto registrado para el plato ID ${platoId}. Total de votos: ${datosVotos[idStr]}` });
+        await fs.promises.writeFile(votosPath, JSON.stringify(datosVotos, null, 2));
+        res.status(200).json({
+            platoId,
+            votos: datosVotos[idStr]
+        });
     } catch (error) {
-        console.error("Error al guardar votos.json:", error);
-        res.status(500).json({ mensaje: 'Error interno del servidor al guardar el voto.' });
+        console.error("Error al guardar votos:", error);
+        res.status(500).json({ mensaje: "Error interno al guardar el voto." });
     }
 });
 
-app.post('/api/comentarios/:id', (req, res) => {
+
+app.post('/api/comentarios/:id', async (req, res) => {
     const id = req.params.id;
-    const { nombre, comentario } = req.body;
+    let { nombre, comentario } = req.body;
 
     if (!nombre || !comentario) {
         return res.status(400).json({ mensaje: "Faltan campos obligatorios." });
     }
 
-    const nuevoComentario = {
+    if (nombre.length >  2253 || comentario.length > 500) {
+        return res.status(400).json({ mensaje: "Texto demasiado largo." });
+    }
+
+    const nuevo = {
         nombre,
         comentario,
         fecha: new Date().toISOString()
     };
 
-    if (!datosComentarios[id]) {
-        datosComentarios[id] = [];
-    }
+    if (!datosComentarios[id]) datosComentarios[id] = [];
 
-    datosComentarios[id].push(nuevoComentario);
+    datosComentarios[id].push(nuevo);
 
     try {
-        fs.writeFileSync(comentariosPath, JSON.stringify(datosComentarios, null, 2));
-        res.status(200).json({ mensaje: "Comentario guardado correctamente." });
+        await fs.promises.writeFile(
+            comentariosPath,
+            JSON.stringify(datosComentarios, null, 2)
+        );
+        res.status(200).json({
+            comentario: nuevo
+        });
     } catch (error) {
-        console.error("Error al guardar comentarios:", error);
         res.status(500).json({ mensaje: "Error interno al guardar comentario." });
     }
 });
+
 
 
 //INICIAR EL SERVIDOR

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     //  Tira el top 5 de mejores platos.
     const topPlatos = listaPlatos.sort((a, b) => b[1] - a[1]).slice(0, 5);
 
-    // Obtiene los detalles de los platos(votos nomas, supongo).
+    // Obtiene los detalles de los platos.
     const datosResponse = await fetch("/api/datosProductos");
     if (!datosResponse.ok) {
       throw new Error("No se pudieron obtener los datos de los productos.");
@@ -39,25 +39,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     topPlatos.forEach(([id, votos], index) => {
       // Buscar el plato completo usando su ID.
       const plato = todosPlatos.find((p) => p.id == id);
-      if (!plato) return;
+      if (plato){
 
-      const elto = document.createElement("div");
-      elto.classList.add("eltoComida");
+        const elto = document.createElement("div");
+        elto.classList.add("eltoComida");
 
-      elto.innerHTML = `
-        <div class="platoRanking">
-          <img src="${plato.imagen || "/assets/default.jpg"}"
-              alt="Imagen de ${plato.nombre || "Plato destacado"}"
-              title="${plato.nombre || "Plato destacado"}: ${votos} votos">
+        elto.innerHTML = `
+          <div class="platoRanking">
+            <img src="${plato.imagen || "/assets/default.jpg"}"
+                alt="Imagen de ${plato.nombre || "Plato destacado"}"
+                title="${plato.nombre || "Plato destacado"}: ${votos} votos">
 
-          <div class="overlayInfo">
-            <span class="rankingEtiqueta">#${index + 1}</span>
-            <p class="nombrePlato">${plato.nombre || "Plato destacado"}</p>
+            <div class="overlayInfo">
+              <span class="rankingEtiqueta">#${index + 1}</span>
+              <p class="nombrePlato">${plato.nombre || "Plato destacado"}</p>
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-      contenedor.appendChild(elto);
+        contenedor.appendChild(elto);
+      }
     });
 
   } catch (error) {

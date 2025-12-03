@@ -171,7 +171,7 @@ function mostrarMensajeVoto(mensaje) {
     }, 2000);
 }
 
-// ==================== MODAL DE COMENTARIOS ==================== //
+// Modal (Comentarios).
 
 const modal = document.getElementById("modalComentarios");
 const cerrarModal = document.querySelector(".cerrarModal");
@@ -194,10 +194,11 @@ cerrarModal.addEventListener("click", () => {
     modal.classList.add("hidden");
 });
 
-// Cerrar|clic => afuera
+/* Cerrar|clic => afuera
 modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.classList.add("hidden");
 });
+*/
 
 // Carga comentarios.
 async function cargarComentarios(id) {
