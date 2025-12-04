@@ -1,58 +1,71 @@
-// platosSemana.js
 
-document.addEventListener("DOMContentLoaded", () => {
-  // obtencion votos desde localStorage
-  const votos = JSON.parse(localStorage.getItem("votosPlatos")) || {};
-  const listaPlatos = Object.entries(votos);
 
-  if (listaPlatos.length === 0) {
-    // si nadie voto
-    console.log("Aún no hay votos para mostrar el ranking.");
-  } else {
-    // Tomar los 5 más votados
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    // obtencion de votos.
+    const votosResponse = await fetch("/api/votos");
+    if (!votosResponse.ok) {
+      throw new Error("No se pudieron obtener los votos del servidor.");
+    }
+    const votos = await votosResponse.json();
+    
+    // Se convierte el objeto de votos a un array para poder ordenarlo.
+    const listaPlatos = Object.entries(votos);
+
+    if (listaPlatos.length === 0) {
+      console.log("Aún no hay votos para mostrar el ranking.");
+      return;
+    }
+
+    //  Tira el top 5 de mejores platos.
     const topPlatos = listaPlatos.sort((a, b) => b[1] - a[1]).slice(0, 5);
 
-    fetch("/api/datosProductos")
-      .then((res) => res.json())
-      .then((datos) => {
-        const todosPlatos = Object.values(datos).flat();
-        const contenedor = document.querySelector(".containerComidas");
+    // Obtiene los detalles de los platos.
+    const datosResponse = await fetch("/api/datosProductos");
+    if (!datosResponse.ok) {
+      throw new Error("No se pudieron obtener los datos de los productos.");
+    }
+    const datos = await datosResponse.json();
+    
+    // Une todos los productos de las diferentes categorías en un solo array.
+    const todosPlatos = Object.values(datos).flat();
+    const contenedor = document.querySelector(".containerComidas");
 
-        if (!contenedor) {
-          console.warn("No se encontró el contenedor .containerComidas");
-          return;
-        }
+    if (!contenedor) return;
 
-        contenedor.innerHTML = ""; // limpiar antes de mostrar
+    contenedor.innerHTML = ""; // limpiar antes de mostrar.
 
-        topPlatos.forEach(([id, votos], index) => {
-          const plato = todosPlatos.find((p) => p.id == id);
-          if (!plato) return;
+    // Muestra los platos rankeados.
+    topPlatos.forEach(([id, votos], index) => {
+      // Buscar el plato completo usando su ID.
+      const plato = todosPlatos.find((p) => p.id == id);
+      if (plato){
 
-          const elto = document.createElement("div");
-          elto.classList.add("eltoComida");
+        const elto = document.createElement("div");
+        elto.classList.add("eltoComida");
 
-          elto.innerHTML = `
-            <div class="platoRanking">
-              <img src="${plato.imagen || "/assets/default.jpg"}" 
-                  alt="Imagen de ${plato.nombre || "Plato destacado"}" 
-                  title="${plato.nombre || "Plato destacado"}">
+        elto.innerHTML = `
+          <div class="platoRanking">
+            <img src="${plato.imagen || "/assets/default.jpg"}"
+                alt="Imagen de ${plato.nombre || "Plato destacado"}"
+                title="${plato.nombre || "Plato destacado"}: ${votos} votos">
 
-              <div class="overlayInfo">
-                <span class="rankingEtiqueta">#${index + 1}</span>
-                <p class="nombrePlato">${plato.nombre || "Plato destacado"}</p>
-              </div>
+            <div class="overlayInfo">
+              <span class="rankingEtiqueta">#${index + 1}</span>
+              <p class="nombrePlato">${plato.nombre || "Plato destacado"}</p>
             </div>
-          `;
+          </div>
+        `;
 
-          contenedor.appendChild(elto);
-        });
-      })
-      .catch((error) => {
-        console.error(
-          "Error al cargar datos de productos para el ranking:",
-          error
-        );
-      });
+        contenedor.appendChild(elto);
+      }
+    });
+
+  } catch (error) {
+    console.error("Error al cargar el ranking semanal:", error);
+    const contenedor = document.querySelector(".containerComidas");
+    if(contenedor) {
+        contenedor.innerHTML = `<p style="text-align:center;">Error: No se pudo cargar el ranking global.</p>`;
+    }
   }
 });

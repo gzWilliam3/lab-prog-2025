@@ -44,7 +44,7 @@ p{
 
 /* SECCION IMAGEN FONDO Y LOGO */
 .fondoPagina {
-  width: 100%;
+  width: 1fr;
   height: 512px;
   background-image: url("../assets/fondo.jpg");
   background-size: cover;
@@ -54,9 +54,10 @@ p{
 }
 
 .navContenedor {
+  width: 100%;
   display: flex;
   justify-content: center;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .navContenedor ul li{
@@ -143,76 +144,6 @@ p{
   background: linear-gradient(to bottom, rgba(246, 247, 249, 1) 35%, rgba(225, 227, 232, 1) 90%);
 }
 
-
-
-.gradienteFooter{
-  height:300px;
-  background: #E1E3E8;
-  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
-}
-
-/* ranking de comidas */
-.platoRanking {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 20px;
-  background-color: #ccc; /* si no hay imagen */
-}
-
-.rankingInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.55);
-  color: white;
-  text-align: center;
-  padding: 8px 10px;
-  border-radius: 0 0 20px 20px;
-  font-family: "Inter", sans-serif;
-}
-
-.rankingPos {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-
-.rankingNombre {
-  font-size: 13px;
-  line-height: 1.2;
-  margin-top: 2px;
-}
-
-.platoRanking img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
-
-
-.rankingEtiqueta {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  backdrop-filter: blur(2px);
-
-}
-
-.platoRanking:hover img {
-  transform: scale(1.1);
-}
-
 /* INICIO SECCION CAJA COMIDAS */
 #cajaComidas{
   display: flex;
@@ -257,37 +188,38 @@ p{
   transform: scale(1.08);
 }
 
-/* Banda negra semitransparente */
-.overlayInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  text-align: center;
-  border-radius: 0 0 20px 20px;
-}
-
-.overlayInfo .rankingEtiqueta {
-  position: relative;
-  top: -34px;
-  left: 0;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.overlayInfo .nombrePlato {
-  margin: 2px 0 0;
-  font-size: 14px;
-  font-family: "Inter", sans-serif;
-}
-/* FIN Banda negra semitransparente */
-
 /* FIN SECCION CAJA DE COMIDAS */
 
-/* FIN Ranking de comidas */
+.gradienteFooter{
+  height:300px;
+  background: #E1E3E8;
+  background: linear-gradient(to bottom, rgba(225, 227, 232, 1) 35%, rgba(33, 40, 48, 1) 90%);  
+}
+
+/* ranking de comidas */
+.platoRanking {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #ccc; /* si no hay imagen */
+}
+
+
+
+.platoRanking img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.platoRanking:hover img {
+  transform: scale(1.1);
+}
+/* FIN ranking de comidas */
 
 html {
   scroll-behavior: smooth;
@@ -370,6 +302,28 @@ footer{
   width: 20px;
   height: 20px;
 }
-/* FIN FOOTER */ 
+/* FIN FOOTER */
 
+/* Banda negra semitransparente */
+.overlayInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
 
+.overlayInfo .rankingEtiqueta {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.overlayInfo .nombrePlato {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+}
